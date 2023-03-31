@@ -1,0 +1,22 @@
+{
+  // list of images to display on the page, in DOM order
+  "images": [
+    {
+      "src": "string",
+      "alt": "string"
+    }
+  ],
+  // page name for identification purposes. should match key name.
+  "name": "string",
+  "tags": ["tag1", "tag2"],
+  // any text we want to display on the page
+  "text": ["some text", "more text"],
+  // title for browser bar as well as to display on the list
+  "title": "page title",
+  // if we want to populate a template 
+  "template": "single-image",
+  // any other page styles we want to implement, like page background color
+  "style": {
+   "selector": "styles" 
+  }
+}

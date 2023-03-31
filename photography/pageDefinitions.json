@@ -1,0 +1,25 @@
+{
+  "chasm": {
+    "images": [
+      {
+        "src": "https://live.staticflickr.com/65535/50764696597_9635015d6c_k.jpg",
+        "alt": "a long-exposure photograph taken at night of a shed with a giant sign on the side that reads 'CHASM'."
+      }
+    ],
+    "name": "chasm",
+    "styles": {
+      "body": "background-color: black;"
+    },
+    "template": "single-image"
+  },
+  "forest management": {
+    "images": [
+      {
+        "src": "https://live.staticflickr.com/65535/51132737988_6572d328b8_k.jpg",
+        "alt": "a photograph of a hill along the water. the hill is covered in trees, a section of which are planted in neat orderly rows. a smattering of small boats and buildings are seen along the shoreline."
+      }  
+    ],
+    "name": "forest management",
+    "template": "single-image"
+  }
+}
