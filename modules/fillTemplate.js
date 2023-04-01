@@ -5,32 +5,39 @@ const templateIds = {
   image: "#image-", // add index to end
 };
 
-function isCorrectTemplate(pageTemplate) {
-  const regex = /(?<=templates\/).+(?=\?)/;
-  const currentTemplate = window.location.href.match(regex);
-  return currentTemplate && currentTemplate[0] === pageTemplate;
+// function isCorrectTemplate(pageTemplate) {
+//   const regex = /(?<=templates\/).+(?=\?)/;
+//   const currentTemplate = window.location.href.match(regex);
+//   return currentTemplate && currentTemplate[0] === pageTemplate;
+// }
+
+export function renderImages(images, body) {
+  images.forEach((image, i) => {
+    const imageEl = document.createElement("img");
+
+    imageEl.src = image.src;
+    imageEl.alt = image.alt;
+    imageEl.id = `image-${i}`;
+
+    body.appendChild(imageEl);
+  });
 }
 
 async function fillTemplate(pageName, pageFolder) {
-  let page = await getPageConfig(pageName, pageFolder);
+  const page = await getPageConfig(pageName, pageFolder);
+  const { template, images } = page;
+  console.log(template)
 
-  if (!isCorrectTemplate(page.template)) {
-    throw new Error ("oops! wront template!");
-  }
+  // if (!isCorrectTemplate(template)) {
+  //   throw new Error (`oops! wrong template! expected: ${template}`);
+  // }
 
   document.title = `${page.name} – claire freeahfer`;
 
   const body = document.querySelector("body");
 
   // images
-  page.images.forEach((image, i) => {
-    const imageEl = document.querySelector(`${templateIds.image}${i}`);
-
-    imageEl.src = image.src;
-    imageEl.alt = image.alt;
-
-    body.appendChild(imageEl);
-  });
+  renderImages(images, body)
 
   // styles
   if (page.styles) {
@@ -48,7 +55,7 @@ try {
   const pageName = params.get("name");
   const pageFolder = params.get("folder");
 
-  fillTemplate(pageName, pageFolder);
+  // fillTemplate(pageName, pageFolder);
 } catch (e) {
   handleErrors(e);
 }

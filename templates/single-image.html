@@ -10,21 +10,23 @@
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <style>
       body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+        min-height: 100vh;
         margin: 0;
+        background-repeat: repeat;
       }
-      
+
       img {
         max-width: 80%;
         max-height: 80%;
+        place-self: center;
       }
     </style>
     <script type="module" src="../modules/fillTemplate.js"></script>
   </head>
   <body>
-    <img src="" alt="loading..." id="image-0">
   </body>
 </html>

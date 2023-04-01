@@ -1,10 +1,11 @@
 import handleErrors from "../modules/errorHandling.js";
+import { renderImages } from "../modules/fillTemplate.js";
 import { getGrassColor, getPageConfig } from "../modules/utils.js";
 
 // break apart into pieces to be reused in other generators
 async function generatePage(pageName, pageFolder) {
   let page = await getPageConfig(pageName, pageFolder);
-  const { date, name, images } = page;
+  const { date, name, images, styles } = page;
 
   const jsDate = new Date(date[0], date[1], date[2]);
 
@@ -14,41 +15,46 @@ async function generatePage(pageName, pageFolder) {
   document.title = `${name} – claire freeahfer`;
 
   const numberOfImages = images.length;
+  const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
-  // image orientation
-  switch (numberOfImages) {
-    case 1:
-      // default
-      break;
-    case 2:
-      if (window.matchMedia("(orientation: landscape)").matches) {
+  // lay out grid based on screen aspect ratio
+  if (!isLandscape) {
+    body.style.gridTemplateRows = `repeat(${numberOfImages}, 1fr)`;
+  } else {
+    switch (numberOfImages) {
+      case 1:
+        // default
+        break;
+      case 2:
+        // arrange horizontally
         body.style.gridTemplateColumns = "1fr 1fr";
-      }
-      break;
-    case 3:
-      // ???
-      break;
-    case 4:
-      if (window.matchMedia("(orientation: landscape)").matches) {
+        break;
+      case 3:
+        // ???
+        break;
+      case 4:
+        // 2x2
         body.style.gridTemplateColumns = "1fr 1fr";
         body.style.gridTemplateRows = "1fr 1fr";
-      } else {
-        body.style.gridTemplateColumns = "1fr";
-        body.style.gridTemplateRows = "1fr 1fr 1fr 1fr";
-      }
-      break;
+        break;
+    }
   }
 
-  // images
-  images.forEach((image, i) => {
-    const imageEl = document.createElement("img");
+  renderImages(images, body);
 
-    imageEl.src = image.src;
-    imageEl.alt = image.alt;
-    imageEl.id = `image-${i}`;
+  // apply landscape custom styles
+  if (styles && isLandscape) {
+    Object.keys(styles).forEach(selector => {
+      const el = document.querySelector(selector);
+      if (!el || !el.style) {
+        throw new Error ("can't apply custom styling");
+      }
 
-    body.appendChild(imageEl);
-  });
+      Object.keys(styles[selector]).forEach(property => {
+        el.style[property] = styles[selector][property];
+      })
+    })
+  }
 }
 
 try {

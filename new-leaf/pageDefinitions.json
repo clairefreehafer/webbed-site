@@ -8,11 +8,7 @@
         "alt": "a gif of the moment my character first arrived in the town of avalar. the train has pulled up to the platform and i can be seen just inside the doors, which are still closed. porter is on the platform next to the open gate."
       }
     ],
-    "template": "animal-crossing",
-    "styles": {
-      "body": "background-image: url('../images/grass/circle_0401-0722.png'); background-repeat: repeat;",
-      "#image-0": "border: 1rem solid white; box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);"
-    }
+    "template": "animal-crossing"
   },
   "home sweet home": {
     "name": "home sweet home",
@@ -23,12 +19,52 @@
         "alt": "a gif of my character standing in their small yellow tent."
       }, {
         "src": "https://live.staticflickr.com/4482/38201192271_0357f077f0_o.gif",
-        "alt": "a gif of my character standint in front of their small yellow tent."
+        "alt": "a gif of my character standing in front of their small yellow tent."
+      }
+    ],
+    "template": "animal-crossing"
+  },
+  "new beginnings": {
+    "name": "new beginnings",
+    "date": [2013, 5, 11],
+    "images": [
+      {
+        "src": "https://c1.staticflickr.com/5/4513/26424696119_9272d84700_o.gif",
+        "alt": "a gif of isabelle handing my character a tree sapling, which i then plant in a garden bed in the middle of the town plaza."
+      },
+      {
+        "src": "https://c1.staticflickr.com/5/4555/24348852858_e12fc9b846_o.gif",
+        "alt": "a gif of my character and isabelle standing in a garden bed in the middle of the town plaza. a hole is dug in front of us."
+      },
+      {
+        "src": "https://c1.staticflickr.com/5/4565/26424695269_cde586d79d_o.gif",
+        "alt": "a gif of isabelle handing my character a tree sapling as we stand in a garden bed in the middle of the town plaza. a hole is dug in front of us."
+      },
+      {
+        "src": "https://c1.staticflickr.com/5/4486/38201888811_4d85f04ab1_o.gif",
+        "alt": "a gif of my character holding a tree sapling as isabelle and i stand in a garden bed in the middle of the town plaza. a hole is dug in front of us."
+      },
+      {
+        "src": "https://c1.staticflickr.com/5/4449/26424694739_9072dc17db_o.gif",
+        "alt": "a gif of my character planting a tree sapling in the garden box in the town plaza."
+      },
+      {
+        "src": "https://c1.staticflickr.com/5/4469/24348851728_72c42c01ff_o.gif",
+        "alt": "a gif of my character standing in front of the planted tree sapling. isabelle and our neighbors are clapping and cheering."
       }
     ],
     "template": "animal-crossing",
     "styles": {
-      "body": "background-image: url('../images/grass/circle_0401-0722.png'); background-repeat: repeat;"
+      "body": {
+        "gridTemplateColumns": "1fr 1fr",
+        "gridTemplateRows": "repeat(4, 1fr)"
+      },
+      "#image-0": {
+        "gridColumn": "span 2"
+      },
+      "#image-5": {
+        "gridColumn": "span 2"
+      }
     }
   }
 }
