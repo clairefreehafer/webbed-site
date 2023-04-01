@@ -1,31 +1,35 @@
-/* jshint esversion: 8 */
+import { getGrassColor, getPageConfig } from "../modules/utils.js";
 
-import { getPageConfig } from "../modules/utils.js";
+async function generatePage(pageName, pageFolder) {
+  let page = await getPageConfig(pageName, pageFolder);
+  const { date, name } = page;
 
-async function generatePage() {
-  let page;
+  const jsDate = new Date(date[0], date[1], date[2]);
 
-  try {
-    page = await getPageConfig(pageName, pageFolder);
-  } catch (e) {
-    document.title = "something went wrong :(";
-    console.error(e);
-  }
-  
-  document.title = `${page.name} – claire freeahfer`;
-  
+  const body = document.querySelector("body");
+  body.style.backgroundImage = `url('../images/grass/${getGrassColor("circle", jsDate)}')`;
+
+  document.title = `${name} – claire freeahfer`;
+
   // images
   page.images.forEach((image, i) => {
     const imageEl = document.createElement("img");
-    
+
     imageEl.src = image.src;
     imageEl.alt = image.alt;
+    imageEl.id = `image-${i}`;
+
+    body.appendChild(imageEl);
   });
 }
 
-const params = new URLSearchParams(window.location.search);
+try {
+  const params = new URLSearchParams(window.location.search);
 
-const pageName = params.get("name");
-const pageFolder = params.get("folder");
+  const pageName = params.get("name");
+  const pageFolder = params.get("folder");
 
-generatePage(pageName, pageFolder);
+  generatePage(pageName, pageFolder);
+} catch (e) {
+  console.error(e);
+}
