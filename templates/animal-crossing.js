@@ -1,3 +1,4 @@
+import handleErrors from "../modules/errorHandling.js";
 import { getGrassColor, getPageConfig } from "../modules/utils.js";
 
 async function generatePage(pageName, pageFolder) {
@@ -31,5 +32,5 @@ try {
 
   generatePage(pageName, pageFolder);
 } catch (e) {
-  console.error(e);
+  handleErrors(e);
 }

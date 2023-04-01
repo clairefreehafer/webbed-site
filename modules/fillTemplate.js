@@ -1,4 +1,4 @@
-/* jshint esversion: 8 */
+import handleErrors from "./errorHandling.js";
 import { getPageConfig } from "./utils.js";
 
 const templateIds = {
@@ -12,37 +12,29 @@ function isCorrectTemplate(pageTemplate) {
 }
 
 async function fillTemplate(pageName, pageFolder) {
-  let page;
+  let page = await getPageConfig(pageName, pageFolder);
 
-  try {
-    page = await getPageConfig(pageName, pageFolder);
-  } catch (e) {
-    document.title = "something went wrong :(";
-    console.error(e);
-  }
-  
   if (!isCorrectTemplate(page.template)) {
-    document.title = "oops! wrong template!";
-    console.error("oops! wrong template!");
+    throw new Error ("oops! wront template!");
   }
-  
+
   document.title = `${page.name} – claire freeahfer`;
-  
+
   const body = document.querySelector("body");
-  
+
   // images
   page.images.forEach((image, i) => {
     const imageEl = document.querySelector(`${templateIds.image}${i}`);
-    
+
     imageEl.src = image.src;
     imageEl.alt = image.alt;
-    
+
     body.appendChild(imageEl);
   });
-  
+
   // styles
   if (page.styles) {
-    
+
     Object.keys(page.styles).forEach(selector => {
       const el = document.querySelector(selector);
       el.setAttribute("style", page.styles[selector]);
@@ -50,9 +42,13 @@ async function fillTemplate(pageName, pageFolder) {
   }
 }
 
-const params = new URLSearchParams(window.location.search);
+try {
+  const params = new URLSearchParams(window.location.search);
 
-const pageName = params.get("name");
-const pageFolder = params.get("folder");
+  const pageName = params.get("name");
+  const pageFolder = params.get("folder");
 
-fillTemplate(pageName, pageFolder);
+  fillTemplate(pageName, pageFolder);
+} catch (e) {
+  handleErrors(e);
+}
