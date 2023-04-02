@@ -2,7 +2,7 @@ export async function fetchPages(pageFolder) {
   return fetch(`../${pageFolder}/pageDefinitions.json`)
     .then(response => response.json())
     .catch(e => {
-      throw new Error("failed to fetch page definitions JSON", e)
+      throw new Error("failed to fetch page definitions JSON " + e)
     });
 }
 
@@ -11,11 +11,44 @@ export async function getPageConfig(pageName, pageFolder) {
   return pages[pageName];
 }
 
-const grassShapes = {
-  circle: "circle",
-  squiare: "square",
-  triangle: "triangle"
-};
+export async function generatePageList(path, listName) {
+  const pages = await fetchPages(path);
+
+  const list = document.querySelector(`#${listName || path}-list`);
+
+  const listOfPages = [];
+
+  Object.keys(pages).forEach(pageKey => {
+    const page = pages[pageKey];
+
+    const listItem = document.createElement("li");
+    const link = document.createElement("a");
+
+    if (page.template) {
+      link.href = `/templates/${page.template}.html${generateTemplateParams(path, page)}`;
+    } else {
+      link.href = `/pages/${page.name}.html`;
+    }
+
+    listOfPages.push(link.href);
+
+    const linkText = document.createTextNode(page.title || page.name);
+
+    link.appendChild(linkText);
+    listItem.appendChild(link);
+    list.appendChild(listItem);
+  });
+}
+
+function generateTemplateParams(path, page) {
+  if (path.includes("animal-crossing")) {
+    // assuming path format `animal-crossing/game-title`
+    const game = path.split("/")[1];
+    return `?name=${page.name}&game=${game}`;
+  }
+
+  return `?name=${page.name}`;
+}
 
 // https://nookipedia.com/wiki/User:AlexBot2004/Grass
 export function getGrassColor(shape, date) {
@@ -94,32 +127,4 @@ export function getGrassColor(shape, date) {
   }
 
   return `${shape}_${dateRange}.png`;
-}
-
-export async function generatePageList(path, listName) {
-  const pages = await fetch(path).then(response => response.json());
-  const list = document.querySelector(`#${listName}-list`);
-
-  const listOfPages = [];
-
-  Object.keys(pages).forEach(pageKey => {
-    const page = pages[pageKey];
-
-    const listItem = document.createElement("li");
-    const link = document.createElement("a");
-
-    if (page.template) {
-      link.href = `/templates/${page.template}.html?name=${page.name}&folder=${listName}`;
-    } else {
-      link.href = `/pages/${page.name}.html`;
-    }
-
-    listOfPages.push(link.href);
-
-    const linkText = document.createTextNode(page.title || page.name);
-
-    link.appendChild(linkText);
-    listItem.appendChild(link);
-    list.appendChild(listItem);
-  });
 }

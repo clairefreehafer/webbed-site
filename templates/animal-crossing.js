@@ -2,9 +2,8 @@ import handleErrors from "../modules/errorHandling.js";
 import { applyCustomStyles, createGrid, renderImages } from "../modules/fillTemplate.js";
 import { getGrassColor, getPageConfig } from "../modules/utils.js";
 
-// break apart into pieces to be reused in other generators
-async function generatePage(pageName, pageFolder) {
-  let page = await getPageConfig(pageName, pageFolder);
+async function generatePage(pageName, game) {
+  let page = await getPageConfig(pageName, `/animal-crossing/${game}`);
   const { date, name, images, styles } = page;
 
   const jsDate = new Date(date[0], date[1], date[2]);
@@ -14,9 +13,7 @@ async function generatePage(pageName, pageFolder) {
 
   document.title = `${name} – claire freeahfer`;
 
-  const numberOfImages = images.length;
-
-  createGrid(numberOfImages, body);
+  createGrid(page, body);
 
   renderImages(images, body);
 
@@ -26,10 +23,10 @@ async function generatePage(pageName, pageFolder) {
 try {
   const params = new URLSearchParams(window.location.search);
 
-  const pageName = params.get("name");
-  const pageFolder = params.get("folder");
+  const name = params.get("name");
+  const game = params.get("game");
+  generatePage(name, game);
 
-  generatePage(pageName, pageFolder);
 } catch (e) {
   handleErrors(e);
 }

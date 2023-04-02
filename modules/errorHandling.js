@@ -4,9 +4,10 @@ export default function handleErrors(error) {
 
   console.error(error);
 
-  if (shouldRenderError) {
+  if (shouldRenderError === "true") {
     const body = document.querySelector("body");
     const errorContainer = document.createElement("div");
+    errorContainer.style.color = "red";
     errorContainer.textContent = error;
     body.append(errorContainer);
   }

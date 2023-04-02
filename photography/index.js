@@ -2,7 +2,7 @@ import handleErrors from "../modules/errorHandling.js";
 import { generatePageList } from "../modules/utils.js";
 
 try {
-  generatePageList("/photography/pageDefinitions.json", "photography");
+  generatePageList("photography");
 } catch (e) {
   handleErrors(e);
 }

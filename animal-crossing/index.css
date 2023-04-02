@@ -1,0 +1,10 @@
+body {
+  background-repeat: repeat;
+}
+
+#text-background {
+  background-color: rgba(250,243,233, 1);
+  border-radius: 20px;
+  margin: 2rem;
+  padding: 1rem;
+}

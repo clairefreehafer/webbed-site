@@ -2,31 +2,22 @@ import handleErrors from "../modules/errorHandling.js";
 import { applyCustomStyles, createGrid, renderImages } from "../modules/fillTemplate.js";
 import { getPageConfig } from "../modules/utils.js";
 
-// break apart into pieces to be reused in other generators
-async function generatePage(pageName, pageFolder) {
-  let page = await getPageConfig(pageName, pageFolder);
+async function generatePage(pageName) {
+  let page = await getPageConfig(pageName, "photography");
   const { name, images, styles } = page;
-
-  const body = document.querySelector("body");
+  const container = document.querySelector("body");
 
   document.title = `${name} – claire freeahfer`;
 
-  const numberOfImages = images.length;
-
-  createGrid(numberOfImages, body);
-
-  renderImages(images, body);
-
+  createGrid(page, container);
+  renderImages(images, container);
   applyCustomStyles(styles);
 }
 
 try {
-  const params = new URLSearchParams(window.location.search);
+  const name = new URLSearchParams(window.location.search).get("name");
 
-  const pageName = params.get("name");
-  const pageFolder = params.get("folder");
-
-  generatePage(pageName, pageFolder);
+  generatePage(name);
 } catch (e) {
   handleErrors(e);
 }

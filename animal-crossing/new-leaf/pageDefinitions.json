@@ -22,7 +22,8 @@
         "alt": "a gif of my character standing in front of their small yellow tent."
       }
     ],
-    "template": "animal-crossing"
+    "template": "animal-crossing",
+    "cols": 2
   },
   "new beginnings": {
     "name": "new beginnings",
@@ -54,12 +55,9 @@
       }
     ],
     "template": "animal-crossing",
+    "cols": 2,
     "styles": {
       "landscape": {
-        "body": {
-          "gridTemplateColumns": "1fr 1fr",
-          "gridTemplateRows": "repeat(4, 1fr)"
-        },
         "#image-0": {
           "gridColumn": "span 2"
         },

@@ -58,6 +58,14 @@
         "alt": ""
       }
     ],
-    "template": "photography"
+    "template": "photography",
+    "cols": 2,
+    "styles": {
+      "landscape": {
+        "#image-2": {
+          "gridColumn": "span 2"
+        }
+      }
+    }
   }
 }

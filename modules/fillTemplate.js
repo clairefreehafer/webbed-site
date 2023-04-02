@@ -1,41 +1,17 @@
-import handleErrors from "./errorHandling.js";
-import { getPageConfig } from "./utils.js";
-
-const templateIds = {
-  image: "#image-", // add index to end
-};
-
-// function isCorrectTemplate(pageTemplate) {
-//   const regex = /(?<=templates\/).+(?=\?)/;
-//   const currentTemplate = window.location.href.match(regex);
-//   return currentTemplate && currentTemplate[0] === pageTemplate;
-// }
-
-export function createGrid(numberOfImages, body) {
+export function createGrid(page, root) {
+  const { images, cols } = page;
   const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
-  // portrait: images are in single column
-  if (!isLandscape) {
-    body.style.gridTemplateRows = `repeat(${numberOfImages}, auto)`;
+  if (cols && isLandscape) {
+    root.style.gridTemplateColumns = `repeat(${page.cols}, 1fr)`;
   } else {
-    switch (numberOfImages) {
-      case 2:
-        // arrange horizontally
-        body.style.gridTemplateColumns = "1fr 1fr";
-        break;
-      case 4:
-          // 2x2
-          body.style.gridTemplateColumns = "1fr 1fr";
-          body.style.gridTemplateRows = "1fr 1fr";
-          break;
-      default:
-        // vertical column unless otherwise specified above or in custom styles
-        body.style.gridTemplateRows = `repeat(${numberOfImages}, auto)`;
-    }
+    // create a row for each image
+    root.style.gridTemplateRows = `repeat(${images.length}, auto)`;
+
   }
 }
 
-export function renderImages(images, body) {
+export function renderImages(images, root) {
   images.forEach((image, i) => {
     const imageEl = document.createElement("img");
 
@@ -43,7 +19,18 @@ export function renderImages(images, body) {
     imageEl.alt = image.alt;
     imageEl.id = `image-${i}`;
 
-    body.appendChild(imageEl);
+    root.appendChild(imageEl);
+  });
+}
+
+function applyAllStyles(selector, styles) {
+  const el = document.querySelector(selector);
+  if (!el || !el.style) {
+    throw new Error ("can't apply custom styling");
+  }
+
+  Object.keys(styles).forEach(property => {
+    el.style[property] = styles[property];
   });
 }
 
@@ -65,30 +52,12 @@ export function applyCustomStyles(styles) {
       const orientation = selectorOrOrientation;
 
       selectors.forEach(selector => {
-        const el = document.querySelector(selector);
-        if (!el || !el.style) {
-          throw new Error ("can't apply custom styling");
-        }
-
-        const elStyles = styles[orientation][selector];
-
-        Object.keys(elStyles).forEach(property => {
-          el.style[property] = elStyles[property];
-        })
+        applyAllStyles(selector, styles[orientation][selector]);
       });
     } else {
       const selector = selectorOrOrientation;
 
-      const el = document.querySelector(selector);
-      if (!el || !el.style) {
-        throw new Error ("can't apply custom styling");
-      }
-
-      const elStyles = styles[selector];
-
-      Object.keys(elStyles).forEach(property => {
-        el.style[property] = elStyles[property];
-      })
+      applyAllStyles(selector, styles[selector]);
     }
   });
 }
