@@ -23,5 +23,21 @@
     ],
     "name": "forest management",
     "template": "single-image"
+  },
+  "the center of the universe": {
+    "name": "the center of the universe",
+    "images": [
+      {
+        "src": "https://live.staticflickr.com/8453/29406579942_19d63eaaa0_k.jpg",
+        "alt": ""
+      }, {
+        "src": "https://live.staticflickr.com/8047/29406567452_6354e8665e_k.jpg",
+        "alt": ""
+      }, {
+        "src": "https://live.staticflickr.com/8237/29225531450_1e4e5f77ff_k.jpg",
+        "alt": ""
+      }
+    ],
+    "template": "single-image"
   }
 }

@@ -1,5 +1,5 @@
 import handleErrors from "../modules/errorHandling.js";
-import { renderImages } from "../modules/fillTemplate.js";
+import { applyCustomStyles, renderImages } from "../modules/fillTemplate.js";
 import { getPageConfig } from "../modules/utils.js";
 
 // break apart into pieces to be reused in other generators
@@ -39,19 +39,7 @@ async function generatePage(pageName, pageFolder) {
 
   renderImages(images, body);
 
-  // apply custom styles
-  if (styles) {
-    Object.keys(styles).forEach(selector => {
-      const el = document.querySelector(selector);
-      if (!el || !el.style) {
-        throw new Error ("can't apply custom styling");
-      }
-
-      Object.keys(styles[selector]).forEach(property => {
-        el.style[property] = styles[selector][property];
-      })
-    })
-  }
+  applyCustomStyles(styles);
 }
 
 try {
@@ -60,9 +48,7 @@ try {
   const pageName = params.get("name");
   const pageFolder = params.get("folder");
 
-  generatePage(pageName, pageFolder).catch(e => {
-    throw new Error(e);
-  });
+  generatePage(pageName, pageFolder);
 } catch (e) {
   handleErrors(e);
 }

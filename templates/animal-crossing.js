@@ -1,5 +1,5 @@
 import handleErrors from "../modules/errorHandling.js";
-import { renderImages } from "../modules/fillTemplate.js";
+import { applyCustomStyles, renderImages } from "../modules/fillTemplate.js";
 import { getGrassColor, getPageConfig } from "../modules/utils.js";
 
 // break apart into pieces to be reused in other generators
@@ -42,19 +42,7 @@ async function generatePage(pageName, pageFolder) {
 
   renderImages(images, body);
 
-  // apply landscape custom styles
-  if (styles && isLandscape) {
-    Object.keys(styles).forEach(selector => {
-      const el = document.querySelector(selector);
-      if (!el || !el.style) {
-        throw new Error ("can't apply custom styling");
-      }
-
-      Object.keys(styles[selector]).forEach(property => {
-        el.style[property] = styles[selector][property];
-      })
-    })
-  }
+  applyCustomStyles(styles);
 }
 
 try {

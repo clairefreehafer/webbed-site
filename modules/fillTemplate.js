@@ -23,39 +23,50 @@ export function renderImages(images, body) {
   });
 }
 
-async function fillTemplate(pageName, pageFolder) {
-  const page = await getPageConfig(pageName, pageFolder);
-  const { template, images } = page;
-  console.log(template)
+export function applyCustomStyles(styles) {
+  if (!styles) return;
 
-  // if (!isCorrectTemplate(template)) {
-  //   throw new Error (`oops! wrong template! expected: ${template}`);
-  // }
+  const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
-  document.title = `${page.name} – claire freeahfer`;
+  Object.keys(styles).forEach(selectorOrOrientation => {
+    let selectors;
 
-  const body = document.querySelector("body");
+    if (selectorOrOrientation === "landscape" && isLandscape) {
+      selectors = Object.keys(styles.landscape);
+    } else if (selectorOrOrientation === "portrait" && !isLandscape) {
+      selectors = Object.keys(styles.portrait);
+    } else {
+      selector = selectorOrOrientation;
+    }
 
-  // images
-  renderImages(images, body)
+    if (selectors) {
+      const orientation = selectorOrOrientation;
 
-  // styles
-  if (page.styles) {
+      selectors.forEach(selector => {
+        const el = document.querySelector(selector);
+        if (!el || !el.style) {
+          throw new Error ("can't apply custom styling");
+        }
 
-    Object.keys(page.styles).forEach(selector => {
+        const elStyles = styles[orientation][selector];
+
+        Object.keys(elStyles).forEach(property => {
+          el.style[property] = elStyles[property];
+        })
+      });
+    } else {
+      const selector = selectorOrOrientation;
+
       const el = document.querySelector(selector);
-      el.setAttribute("style", page.styles[selector]);
-    })
-  }
-}
+      if (!el || !el.style) {
+        throw new Error ("can't apply custom styling");
+      }
 
-try {
-  const params = new URLSearchParams(window.location.search);
+      const elStyles = styles[selector];
 
-  const pageName = params.get("name");
-  const pageFolder = params.get("folder");
-
-  // fillTemplate(pageName, pageFolder);
-} catch (e) {
-  handleErrors(e);
+      Object.keys(elStyles).forEach(property => {
+        el.style[property] = elStyles[property];
+      })
+    }
+  });
 }

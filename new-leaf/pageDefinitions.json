@@ -55,15 +55,17 @@
     ],
     "template": "animal-crossing",
     "styles": {
-      "body": {
-        "gridTemplateColumns": "1fr 1fr",
-        "gridTemplateRows": "repeat(4, 1fr)"
-      },
-      "#image-0": {
-        "gridColumn": "span 2"
-      },
-      "#image-5": {
-        "gridColumn": "span 2"
+      "landscape": {
+        "body": {
+          "gridTemplateColumns": "1fr 1fr",
+          "gridTemplateRows": "repeat(4, 1fr)"
+        },
+        "#image-0": {
+          "gridColumn": "span 2"
+        },
+        "#image-5": {
+          "gridColumn": "span 2"
+        }
       }
     }
   }
