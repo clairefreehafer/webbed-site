@@ -95,3 +95,31 @@ export function getGrassColor(shape, date) {
 
   return `${shape}_${dateRange}.png`;
 }
+
+export async function generatePageList(path, listName) {
+  const pages = await fetch(path).then(response => response.json());
+  const list = document.querySelector(`#${listName}-list`);
+
+  const listOfPages = [];
+
+  Object.keys(pages).forEach(pageKey => {
+    const page = pages[pageKey];
+
+    const listItem = document.createElement("li");
+    const link = document.createElement("a");
+
+    if (page.template) {
+      link.href = `/templates/${page.template}.html?name=${page.name}&folder=${listName}`;
+    } else {
+      link.href = `/pages/${page.name}.html`;
+    }
+
+    listOfPages.push(link.href);
+
+    const linkText = document.createTextNode(page.title || page.name);
+
+    link.appendChild(linkText);
+    listItem.appendChild(link);
+    list.appendChild(listItem);
+  });
+}

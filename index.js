@@ -1,4 +1,12 @@
-/* jshint esversion: 8 */
+import handleErrors from "./modules/errorHandling.js";
+import { generatePageList, getGrassColor } from "./modules/utils.js";
+
+function applyPageBackground() {
+  const grassImage = getGrassColor("square");
+  const body = document.querySelector("body");
+
+  body.style.backgroundImage = `url("./images/grass/${grassImage}")`;
+}
 
 function getRandomPage() {
   alert("i do nothing :)");
@@ -7,35 +15,13 @@ function getRandomPage() {
   window.location.href = listOfPages[randomIndex];
 }
 
-async function generatePageList(listName) {
-  const pages = await fetch(`./${listName}/pageDefinitions.json`).then(response => response.json());
-  const list = document.querySelector(`#${listName}-list`);
+try {
+  // applyPageBackground();
 
-  const listOfPages = [];
+  // generatePageList("photography");
+  // generatePageList("new-leaf");
 
-  Object.keys(pages).forEach(pageKey => {
-    const page = pages[pageKey];
-
-    const listItem = document.createElement("li");
-    const link = document.createElement("a");
-
-    if (page.template) {
-      link.href = `./templates/${page.template}.html?name=${page.name}&folder=${listName}`;
-    } else {
-      link.href = `./pages/${page.name}`;
-    }
-
-    listOfPages.push(link.href);
-
-    const linkText = document.createTextNode(page.title || page.name);
-
-    link.appendChild(linkText);
-    listItem.appendChild(link);
-    list.appendChild(listItem);
-  });
+  // document.querySelector("#random").addEventListener("click", getRandomPage);
+} catch(e) {
+  handleErrors(e);
 }
-
-await generatePageList("photography");
-await generatePageList("new-leaf");
-
-document.querySelector("#random").addEventListener("click", getRandomPage);

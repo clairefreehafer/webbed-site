@@ -34,6 +34,16 @@
     ],
     "template": "photography"
   },
+  "rippley": {
+    "name": "rippley",
+    "images": [
+      {
+        "src": "https://live.staticflickr.com/3358/3596705780_6b367a8939_k.jpg",
+        "alt": "a small white dog laying on a linoleum floor."
+      }
+    ],
+    "template": "photography"
+  },
   "the center of the universe": {
     "name": "the center of the universe",
     "images": [

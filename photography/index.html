@@ -3,31 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The web site of clairefreehafer</title>
+    <title>photography – claire freehafer</title>
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-    <style>
-      body {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 1rem;
-        min-height: 100vh;
-        margin: 0;
-        background-repeat: repeat;
-      }
-
-      img {
-        max-width: 80vw;
-        max-height: 80vh;
-        place-self: center;
-        margin: 1rem auto;
-      }
-    </style>
-    <script type="module" src="./photography.js"></script>
+    <script src="./index.js" type="module"></script>
   </head>
   <body>
+    <h1>claire freehafer</h1>
+
+    <nav>
+      <h2>navigation</h2>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li>photography</li>
+        <li><a href="/animal-crossing/index.html">animal crossing</a></li>
+      </ul>
+    </nav>
+
+    <h2>photography</h2>
+    <ul id="photography-list">
+    </ul>
+
+    <button id="random">view random page</button>
   </body>
 </html>

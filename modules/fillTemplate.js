@@ -16,7 +16,7 @@ export function createGrid(numberOfImages, body) {
 
   // portrait: images are in single column
   if (!isLandscape) {
-    body.style.gridTemplateRows = `repeat(${numberOfImages}, 1fr)`;
+    body.style.gridTemplateRows = `repeat(${numberOfImages}, auto)`;
   } else {
     switch (numberOfImages) {
       case 2:
@@ -30,7 +30,7 @@ export function createGrid(numberOfImages, body) {
           break;
       default:
         // vertical column unless otherwise specified above or in custom styles
-        body.style.gridTemplateRows = `repeat(${numberOfImages}, 1fr)`;
+        body.style.gridTemplateRows = `repeat(${numberOfImages}, auto)`;
     }
   }
 }
