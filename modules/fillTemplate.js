@@ -11,6 +11,30 @@ const templateIds = {
 //   return currentTemplate && currentTemplate[0] === pageTemplate;
 // }
 
+export function createGrid(numberOfImages, body) {
+  const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+
+  // portrait: images are in single column
+  if (!isLandscape) {
+    body.style.gridTemplateRows = `repeat(${numberOfImages}, 1fr)`;
+  } else {
+    switch (numberOfImages) {
+      case 2:
+        // arrange horizontally
+        body.style.gridTemplateColumns = "1fr 1fr";
+        break;
+      case 4:
+          // 2x2
+          body.style.gridTemplateColumns = "1fr 1fr";
+          body.style.gridTemplateRows = "1fr 1fr";
+          break;
+      default:
+        // vertical column unless otherwise specified above or in custom styles
+        body.style.gridTemplateRows = `repeat(${numberOfImages}, 1fr)`;
+    }
+  }
+}
+
 export function renderImages(images, body) {
   images.forEach((image, i) => {
     const imageEl = document.createElement("img");
@@ -35,8 +59,6 @@ export function applyCustomStyles(styles) {
       selectors = Object.keys(styles.landscape);
     } else if (selectorOrOrientation === "portrait" && !isLandscape) {
       selectors = Object.keys(styles.portrait);
-    } else {
-      selector = selectorOrOrientation;
     }
 
     if (selectors) {

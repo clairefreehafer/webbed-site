@@ -1,5 +1,5 @@
 import handleErrors from "../modules/errorHandling.js";
-import { applyCustomStyles, renderImages } from "../modules/fillTemplate.js";
+import { applyCustomStyles, createGrid, renderImages } from "../modules/fillTemplate.js";
 import { getPageConfig } from "../modules/utils.js";
 
 // break apart into pieces to be reused in other generators
@@ -12,30 +12,8 @@ async function generatePage(pageName, pageFolder) {
   document.title = `${name} – claire freeahfer`;
 
   const numberOfImages = images.length;
-  const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
-  // lay out grid based on screen aspect ratio
-  if (!isLandscape) {
-    body.style.gridTemplateRows = `repeat(${numberOfImages}, 1fr)`;
-  } else {
-    switch (numberOfImages) {
-      case 1:
-        // default
-        break;
-      case 2:
-        // arrange horizontally
-        body.style.gridTemplateColumns = "1fr 1fr";
-        break;
-      case 3:
-        // ???
-        break;
-      case 4:
-        // 2x2
-        body.style.gridTemplateColumns = "1fr 1fr";
-        body.style.gridTemplateRows = "1fr 1fr";
-        break;
-    }
-  }
+  createGrid(numberOfImages, body);
 
   renderImages(images, body);
 

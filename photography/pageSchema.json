@@ -13,10 +13,10 @@
   "text": ["some text", "more text"],
   // title for browser bar as well as to display on the list
   "title": "page title",
-  // if we want to populate a template 
-  "template": "single-image",
+  // if we want to populate a template
+  "template": "photography",
   // any other page styles we want to implement, like page background color
   "style": {
-   "selector": "styles" 
+   "selector": "styles"
   }
 }

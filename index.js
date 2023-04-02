@@ -9,7 +9,6 @@ function getRandomPage() {
 
 async function generatePageList(listName) {
   const pages = await fetch(`./${listName}/pageDefinitions.json`).then(response => response.json());
-  console.log(pages)
   const list = document.querySelector(`#${listName}-list`);
 
   const listOfPages = [];
@@ -22,8 +21,6 @@ async function generatePageList(listName) {
 
     if (page.template) {
       link.href = `./templates/${page.template}.html?name=${page.name}&folder=${listName}`;
-    } else if (page.images.length === 1) {
-      //a utomatically choose 1 image template
     } else {
       link.href = `./pages/${page.name}`;
     }

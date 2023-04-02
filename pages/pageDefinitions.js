@@ -9,7 +9,7 @@ export const chasm = {
   styles: {
     body: "background-color: black;"
   },
-  template: "single-image"
+  template: "photography"
 };
 
 export const example = {
@@ -28,7 +28,7 @@ export const example = {
   // title for browser bar as well as to display on the list
   title: "page title",
   // if we want to populate a template - TBD if we'll actually do it this way
-  // template: "single-image",
+  // template: "photography",
   // any other page styles we want to implement, like page background color
   style: "",
 };
@@ -49,7 +49,7 @@ export const templateExample = {
   // title for browser bar as well as to display on the list
   title: "template example page",
   // if we want to populate a template - TBD if we'll actually do it this way
-  template: "single-image",
+  template: "photography",
   // any other page styles we want to implement, like page background color
   style: "",
 };

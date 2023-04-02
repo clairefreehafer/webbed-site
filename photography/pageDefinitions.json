@@ -12,7 +12,7 @@
         "backgroundColor": "black"
       }
     },
-    "template": "single-image"
+    "template": "photography"
   },
   "forest management": {
     "images": [
@@ -22,7 +22,7 @@
       }
     ],
     "name": "forest management",
-    "template": "single-image"
+    "template": "photography"
   },
   "the center of the universe": {
     "name": "the center of the universe",
@@ -38,6 +38,6 @@
         "alt": ""
       }
     ],
-    "template": "single-image"
+    "template": "photography"
   }
 }
