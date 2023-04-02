@@ -24,6 +24,16 @@
     "name": "forest management",
     "template": "photography"
   },
+  "industrie et égalité": {
+    "name": "industrie et égalité",
+    "images": [
+      {
+        "src": "https://live.staticflickr.com/65535/48089724418_e460d3179d_k.jpg",
+        "alt": ""
+      }
+    ],
+    "template": "photography"
+  },
   "the center of the universe": {
     "name": "the center of the universe",
     "images": [
