@@ -8,7 +8,9 @@
     ],
     "name": "chasm",
     "styles": {
-      "body": "background-color: black;"
+      "body": {
+        "backgroundColor": "black"
+      }
     },
     "template": "single-image"
   },
@@ -17,7 +19,7 @@
       {
         "src": "https://live.staticflickr.com/65535/51132737988_6572d328b8_k.jpg",
         "alt": "a photograph of a hill along the water. the hill is covered in trees, a section of which are planted in neat orderly rows. a smattering of small boats and buildings are seen along the shoreline."
-      }  
+      }
     ],
     "name": "forest management",
     "template": "single-image"
