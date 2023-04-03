@@ -7,17 +7,48 @@ export function createGrid(page, root) {
   } else {
     // create a row for each image
     root.style.gridTemplateRows = `repeat(${images.length}, auto)`;
-
   }
 }
 
-export function renderImages(images, root) {
+export function createSlideShow({ images }) {
+  const slides = document.getElementsByClassName("slide");
+  let currentSlideIndex = 0;
+  const numberOfSlides = images.length;
+
+  function handleButtonClick(n) {
+    slides[currentSlideIndex].classList.remove("active");
+
+    currentSlideIndex += n;
+
+    if (currentSlideIndex >= numberOfSlides) {
+      currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+      currentSlideIndex = numberOfSlides - 1;
+    }
+
+    const nextSlide = slides[currentSlideIndex];
+    nextSlide.classList.add("active");
+  }
+
+  const nextButton = document.getElementById("next");
+  nextButton.addEventListener("click", () => handleButtonClick(1));
+  const prevButton = document.getElementById("prev");
+  prevButton.addEventListener("click", () => handleButtonClick(-1));
+
+  slides[0].classList.add("active");
+}
+
+export function renderImages(images, root, extraClass) {
   images.forEach((image, i) => {
     const imageEl = document.createElement("img");
 
     imageEl.src = image.src;
     imageEl.alt = image.alt;
     imageEl.id = `image-${i}`;
+
+    if (extraClass) {
+      imageEl.classList.add(extraClass);
+    }
 
     root.appendChild(imageEl);
   });
