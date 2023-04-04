@@ -16,18 +16,29 @@ export function createSlideShow({ images }) {
   const numberOfSlides = images.length;
 
   function handleButtonClick(n) {
-    slides[currentSlideIndex].classList.remove("active");
+    const currentSlide = slides[currentSlideIndex];
+    // trigger fade out
+    currentSlide.classList.remove("fade-in");
+    currentSlide.classList.add("fade-out");
 
-    currentSlideIndex += n;
+    // wait til fade out to load next slide
+    setTimeout(() => {
+      currentSlide.classList.remove("active");
+      currentSlide.classList.remove("fade-out");
 
-    if (currentSlideIndex >= numberOfSlides) {
-      currentSlideIndex = 0;
-    } else if (currentSlideIndex < 0) {
-      currentSlideIndex = numberOfSlides - 1;
-    }
+      currentSlideIndex += n;
 
-    const nextSlide = slides[currentSlideIndex];
-    nextSlide.classList.add("active");
+      // loop around if needed
+      if (currentSlideIndex >= numberOfSlides) {
+        currentSlideIndex = 0;
+      } else if (currentSlideIndex < 0) {
+        currentSlideIndex = numberOfSlides - 1;
+      }
+
+      const nextSlide = slides[currentSlideIndex];
+      nextSlide.classList.add("fade-in");
+      nextSlide.classList.add("active");
+    }, 1000);
   }
 
   const nextButton = document.getElementById("next");

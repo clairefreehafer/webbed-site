@@ -67,5 +67,19 @@
         }
       }
     }
+  },
+  "guardians of virginia beach": {
+    "name": "guardians of virginia beach",
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Virginia-beach/i-vPmNBmh/1/cb581516/X4/2021-12-30-15-06-09-X4.jpg",
+        "alt": "a statue of poseiden along the virginia beach boardwalk. he holds a trident in one hand and a turtle in the other. his upper body is protruding from a large rock that has has various sea animals along the side."
+      },
+      {
+        "src": "https://photos.smugmug.com/Virginia-beach/i-hPPGSXV/1/89e8313a/X4/2021-12-30-15-51-51-X4.jpg",
+        "alt": "a large statue of a gorilla with a wide toothy grin. they are wearing glasses, a colorful shark tooth necklace, an unbuttoned aloha shirt, and board shorts."
+      }
+    ],
+    "template": "slideshow"
   }
 }
