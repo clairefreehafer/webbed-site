@@ -1,13 +1,57 @@
+@font-face {
+  font-family: "Fink Heavy";
+  src: url("/fonts/finkheavy-webfont.woff2") format("woff2"),
+  url("/fonts/finkheavy-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
 body {
   background-repeat: repeat;
-  background-position: 2rem 2rem;
+  background-position: 2rem calc(70px + 1rem);
   margin: 0;
+}
+
+.svg-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  margin: 1rem 0 0;
+}
+
+svg {
+  font-family: "Fink Heavy", "Georgia", sans-serif;
+  font-size: 3rem;
+  width: 350px;
+  height: 70px;
+  fill: rgba(231, 197, 73, 1);
+}
+
+.svg-background {
+  fill: rgba(231, 197, 73, 1);
+  stroke: rgba(145, 107, 51, 1);
+  stroke-width: 15px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.svg-background-shadow {
+  fill: black;
+  stroke: black;
+  stroke-width: 15px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.svg-emboss {
+  fill: rgba(231, 197, 73, 0.5);
 }
 
 #text-background {
   background-color: #cfbe95;
   border-radius: 20px;
-  margin: 2rem;
+  margin: 0 2rem;
   padding: 120px 1rem 1rem;
   background-repeat: repeat-x;
   background-position: left top;
