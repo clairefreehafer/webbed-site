@@ -1,6 +1,6 @@
 {
   "birds in a line": {
-    "name": "birds in a line",
+    "title": "birds in a line",
     "images": [
       {
         "src": "https://photos.smugmug.com/Rehoboth-2022/i-2B95nNL/0/ba6191fc/X5/2022-06-16-20-23-46-X5.jpg",
@@ -37,7 +37,7 @@
         "alt": "a long-exposure photograph taken at night of a shed with a giant sign on the side that reads 'CHASM'."
       }
     ],
-    "name": "chasm",
+    "title": "chasm",
     "styles": {
       "body": {
         "backgroundColor": "black"
@@ -52,11 +52,11 @@
         "alt": "a photograph of a hill along the water. the hill is covered in trees, a section of which are planted in neat orderly rows. a smattering of small boats and buildings are seen along the shoreline."
       }
     ],
-    "name": "forest management",
+    "title": "forest management",
     "template": "photography"
   },
   "industrie et égalité": {
-    "name": "industrie et égalité",
+    "title": "industrie et égalité",
     "images": [
       {
         "src": "https://live.staticflickr.com/65535/48089724418_e460d3179d_k.jpg",
@@ -66,7 +66,7 @@
     "template": "photography"
   },
   "rippley": {
-    "name": "rippley",
+    "title": "rippley",
     "images": [
       {
         "src": "https://live.staticflickr.com/3358/3596705780_6b367a8939_k.jpg",
@@ -76,7 +76,7 @@
     "template": "photography"
   },
   "the center of the universe": {
-    "name": "the center of the universe",
+    "title": "the center of the universe",
     "images": [
       {
         "src": "https://live.staticflickr.com/8453/29406579942_19d63eaaa0_k.jpg",
@@ -101,7 +101,7 @@
     }
   },
   "the guardians of virginia beach": {
-    "name": "the guardians of virginia beach",
+    "title": "the guardians of virginia beach",
     "images": [
       {
         "src": "https://photos.smugmug.com/Virginia-beach/i-vPmNBmh/1/cb581516/X4/2021-12-30-15-06-09-X4.jpg",

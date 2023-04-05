@@ -1,15 +1,30 @@
 @font-face {
   font-family: "Fink Heavy";
   src: url("/fonts/finkheavy-webfont.woff2") format("woff2"),
-  url("/fonts/finkheavy-webfont.woff") format("woff");
+       url("/fonts/finkheavy-webfont.woff") format("woff");
   font-style: normal;
   font-weight: normal;
+}
+
+@font-face {
+  font-family: "FOT Seurat Pro B";
+  src: url("/fonts/fot-seurat__pro_b.otf") format("opentype"),
+        url("/fonts/fot-seurat_pro_b-webfont.woff2") format("woff2"),
+       url("/fonts/fot-seurat_pro_b-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   background-repeat: repeat;
   background-position: 2rem calc(70px + 1rem);
   margin: 0;
+  font-weight: 200;
+}
+
+h2, h3 {
+  font-family: "FOT Seurat Pro B", Helvetica, Ariel, sans-serif;
+  font-weight: normal;
 }
 
 .svg-container {

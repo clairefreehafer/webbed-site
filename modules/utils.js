@@ -6,9 +6,9 @@ export async function fetchPages(pageFolder) {
     });
 }
 
-export async function getPageConfig(pageName, pageFolder) {
+export async function getPageConfig(pageTitle, pageFolder) {
   const pages = await fetchPages(pageFolder)
-  return pages[pageName];
+  return pages[pageTitle];
 }
 
 export async function generatePageList(path, listName) {
@@ -27,12 +27,12 @@ export async function generatePageList(path, listName) {
     if (page.template) {
       link.href = `/templates/${page.template}.html${generateTemplateParams(path, page)}`;
     } else {
-      link.href = `/pages/${page.name}.html`;
+      link.href = `/pages/${page.title}.html`;
     }
 
     listOfPages.push(link.href);
 
-    const linkText = document.createTextNode(page.title || page.name);
+    const linkText = document.createTextNode(page.title);
 
     link.appendChild(linkText);
     listItem.appendChild(link);
@@ -44,10 +44,10 @@ function generateTemplateParams(path, page) {
   if (path.includes("animal-crossing")) {
     // assuming path format `animal-crossing/game-title`
     const game = path.split("/")[1];
-    return `?name=${page.name}&game=${game}`;
+    return `?title=${page.title}&game=${game}`;
   }
 
-  return `?name=${page.name}`;
+  return `?title=${page.title}`;
 }
 
 // https://nookipedia.com/wiki/User:AlexBot2004/Grass

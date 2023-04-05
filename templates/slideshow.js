@@ -83,12 +83,12 @@ function createSlideShow(images) {
   slides[0].classList.add("active");
 }
 
-async function generatePage(pageName) {
-  let page = await getPageConfig(pageName, "photography");
-  const { name, images, styles } = page;
+async function generatePage(pageTitle) {
+  let page = await getPageConfig(pageTitle, "photography");
+  const { title, images, styles } = page;
   const container = document.querySelector("body");
 
-  document.title = `${name} – claire freeahfer`;
+  document.title = `${title} – claire freeahfer`;
 
   renderImages(images, container, "slide");
   createSlideShow(images);
@@ -96,9 +96,9 @@ async function generatePage(pageName) {
 }
 
 try {
-  const name = new URLSearchParams(window.location.search).get("name");
+  const title = new URLSearchParams(window.location.search).get("title");
 
-  generatePage(name);
+  generatePage(title);
 } catch (e) {
   handleErrors(e);
 }

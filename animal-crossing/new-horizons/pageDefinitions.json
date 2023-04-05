@@ -1,0 +1,53 @@
+{
+  "ken and octavian": {
+    "title": "ken and octavian",
+    "date": [2020, 7, 7],
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-p3JPqMZ/3/612fb589/X2/2020-08-07-14-11-39-X2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-QzbJgSL/3/423d2645/X2/2020-08-07-14-11-36-X2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-PwKZKhW/3/06751ca2/X2/2020-08-07-14-11-16-X2.jpg",
+        "alt": ""
+      }
+    ],
+    "template": "animal-crossing",
+    "styles": {
+      "#image-0, #image-1": {
+        "border": "none"
+      }
+    }
+  },
+  "sprinkles": {
+    "title": "sprinkles",
+    "date": [2020, 7, 2],
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-wDwP6hs/3/919ff158/X2/2020-08-02-20-52-22-X2.jpg",
+        "alt": ""
+      }
+    ],
+    "template": "animal-crossing"
+  },
+  "his biggest fan": {
+    "title": "his biggest fan",
+    "date": [2020, 7, 1],
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-TwR9DBP/2/24a81968/X2/2020-08-01-12-19-22-X2.jpg",
+        "alt": ""
+      }
+    ],
+    "template": "animal-crossing",
+    "styles": {
+      "#image-0": {
+        "border": "none"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "arrival": {
-    "name": "arrival",
+    "title": "arrival",
     "date": [2013, 5, 11],
     "images": [
       {
@@ -11,7 +11,7 @@
     "template": "animal-crossing"
   },
   "home sweet home": {
-    "name": "home sweet home",
+    "title": "home sweet home",
     "date": [2013, 5, 11],
     "images": [
       {
@@ -26,7 +26,7 @@
     "cols": 2
   },
   "new beginnings": {
-    "name": "new beginnings",
+    "title": "new beginnings",
     "date": [2013, 5, 11],
     "images": [
       {

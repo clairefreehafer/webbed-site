@@ -27,13 +27,15 @@ export function renderImages(images, root, extraClass) {
 }
 
 function applyAllStyles(selector, styles) {
-  const el = document.querySelector(selector);
-  if (!el || !el.style) {
+  const els = document.querySelectorAll(selector);
+  if (!els) {
     throw new Error ("can't apply custom styling");
   }
 
-  Object.keys(styles).forEach(property => {
-    el.style[property] = styles[property];
+  els.forEach(el => {
+    Object.keys(styles).forEach(property => {
+      el.style[property] = styles[property];
+    });
   });
 }
 
