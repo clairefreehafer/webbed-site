@@ -10,45 +10,6 @@ export function createGrid(page, root) {
   }
 }
 
-export function createSlideShow({ images }) {
-  const slides = document.getElementsByClassName("slide");
-  let currentSlideIndex = 0;
-  const numberOfSlides = images.length;
-
-  function handleButtonClick(n) {
-    const currentSlide = slides[currentSlideIndex];
-    // trigger fade out
-    currentSlide.classList.remove("fade-in");
-    currentSlide.classList.add("fade-out");
-
-    // wait til fade out to load next slide
-    setTimeout(() => {
-      currentSlide.classList.remove("active");
-      currentSlide.classList.remove("fade-out");
-
-      currentSlideIndex += n;
-
-      // loop around if needed
-      if (currentSlideIndex >= numberOfSlides) {
-        currentSlideIndex = 0;
-      } else if (currentSlideIndex < 0) {
-        currentSlideIndex = numberOfSlides - 1;
-      }
-
-      const nextSlide = slides[currentSlideIndex];
-      nextSlide.classList.add("fade-in");
-      nextSlide.classList.add("active");
-    }, 1000);
-  }
-
-  const nextButton = document.getElementById("next");
-  nextButton.addEventListener("click", () => handleButtonClick(1));
-  const prevButton = document.getElementById("prev");
-  prevButton.addEventListener("click", () => handleButtonClick(-1));
-
-  slides[0].classList.add("active");
-}
-
 export function renderImages(images, root, extraClass) {
   images.forEach((image, i) => {
     const imageEl = document.createElement("img");

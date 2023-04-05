@@ -1,4 +1,35 @@
 {
+  "birds in a line": {
+    "name": "birds in a line",
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Rehoboth-2022/i-2B95nNL/0/ba6191fc/X5/2022-06-16-20-23-46-X5.jpg",
+        "alt": "",
+        "title": "rehoboth beach, delaware"
+      },
+      {
+        "src": "https://photos.smugmug.com/Rehoboth-2022/i-cnjtDmT/0/60657af5/X5/2022-06-16-20-23-50-X5.jpg",
+        "alt": "",
+        "title": "rehoboth beach, delaware"
+      },
+      {
+        "src": "https://photos.smugmug.com/Road-Trip-through-Kaikoura/i-7hXmv6W/2/9bc0f21a/X5/2019-02-21-18-26-30-X5.jpg",
+        "alt": "",
+        "title": "kaikoura, aotearoa"
+      },
+      {
+        "src": "https://photos.smugmug.com/Colgate-University/i-grMnF5P/2/283eaefa/X4/2013-11-02-15-52-29-X4.jpg",
+        "alt": "",
+        "title": "colgate university"
+      },
+      {
+        "src": "https://photos.smugmug.com/Maine-2009/i-whxrtFb/1/3fde443d/X5/2009-07-19-06-26-52-X5.jpg",
+        "alt": "",
+        "title": "rockland, maine"
+      }
+    ],
+    "template": "slideshow"
+  },
   "chasm": {
     "images": [
       {
@@ -55,10 +86,11 @@
         "alt": ""
       }, {
         "src": "https://live.staticflickr.com/8237/29225531450_1e4e5f77ff_k.jpg",
-        "alt": ""
+        "alt": "",
+        "title": "manhattan bridge, new york city"
       }
     ],
-    "template": "photography",
+    "template": "slideshow",
     "cols": 2,
     "styles": {
       "landscape": {
@@ -68,8 +100,8 @@
       }
     }
   },
-  "guardians of virginia beach": {
-    "name": "guardians of virginia beach",
+  "the guardians of virginia beach": {
+    "name": "the guardians of virginia beach",
     "images": [
       {
         "src": "https://photos.smugmug.com/Virginia-beach/i-vPmNBmh/1/cb581516/X4/2021-12-30-15-06-09-X4.jpg",

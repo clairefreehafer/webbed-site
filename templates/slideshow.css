@@ -1,0 +1,86 @@
+body {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 3rem;
+  margin: 0;
+  height: 100vh;
+}
+
+#title {
+  display: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  left: 0;
+  margin: 0.3rem 0 0.3rem 0;
+  position: absolute;
+  text-align: center;;
+  top: 0;
+  width: 100%;
+}
+
+#slide-count {
+  bottom: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  left: 0;
+  margin: 0.3rem 0 0.3rem 0;
+  position: absolute;
+  text-align: center;;
+  width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  padding: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#next {
+  right: 0;
+}
+
+#prev {
+  left: 0;
+}
+
+img {
+  display: none;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.active {
+  display: block;
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
