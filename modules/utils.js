@@ -124,7 +124,102 @@ export function getGrassColor(shape, date) {
         dateRange = "1210-0224";
       }
       break;
+    default:
+      throw new Error ("something went wrong finding the grass color.");
   }
 
   return `${shape}_${dateRange}.png`;
+}
+
+const astrologyDateRanges = {
+  aquarius: "0120-0218",
+  aries: "0321-0419"
+};
+
+export function getAstrologyDateRange(date) {
+  if (!date) {
+    date = new Date();
+  }
+
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  switch (month) {
+    case 1:
+      if (day <= 19) {
+        //
+      } else {
+        return astrologyDateRanges.aquarius;
+      }
+      break;
+    case 2:
+      if (day <= 18) {
+        return astrologyDateRanges.aquarius;
+      } else {
+        //
+      }
+      break;
+    case 3:
+      if (day <= 20) {
+        //
+      } else {
+        return astrologyDateRanges.aries;
+      }
+      break;
+    case 4:
+      if (day <= 19) {
+        return astrologyDateRanges.aries;
+      } else {
+        //
+      }
+      break;
+    // case 5:
+    // case 6:
+    //   dateRange = "0401-0722";
+    //   break;
+    // case 7:
+    //   if (day <= 22) {
+    //     dateRange = "0401-0722";
+    //   } else {
+    //     dateRange = "0723-0915";
+    //   }
+    //   break;
+    // case 8:
+    //   dateRange = "0723-0915";
+    //   break;
+    // case 9:
+    //   if (day <= 15) {
+    //     dateRange = "0723-0915";
+    //   } else {
+    //     dateRange = "0916-0930";
+    //   }
+    //   break;
+    // case 10:
+    //   if (day <= 15) {
+    //     dateRange = "1001-1015";
+    //   } else if (day <= 29) {
+    //     dateRange = "1016-1029";
+    //   } else {
+    //     dateRange = "1030-1112";
+    //   }
+    //   break;
+    // case 11:
+    //   if (day <= 12) {
+    //     dateRange = "1030-1112";
+    //   } else if (day <= 28) {
+    //     dateRange = "1113-1128";
+    //   } else {
+    //     dateRange = "1129-1209";
+    //   }
+    //   break;
+    // case 12:
+    //   if (day <= 9) {
+    //     dateRange = "1129-1209";
+    //   } else {
+    //     dateRange = "1210-0224";
+    //   }
+    //   break;
+    default:
+      throw new Error ("something went wrong finding the star fragment.");
+  }
 }
