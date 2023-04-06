@@ -20,24 +20,30 @@ export async function generatePageList(path, listName) {
 
   Object.keys(pages).forEach(pageKey => {
     const page = pages[pageKey];
+    const { template, title, date } = page;
 
     const listItem = document.createElement("li");
     const link = document.createElement("a");
 
-    if (page.template) {
-      link.href = `/templates/${page.template}.html${generateTemplateParams(path, page)}`;
+    if (template) {
+      link.href = `/templates/${template}.html${generateTemplateParams(path, page)}`;
     } else {
-      link.href = `/pages/${page.title}.html`;
+      link.href = `/pages/${title}.html`;
     }
 
-    listOfPages.push(link.href);
-
-    const linkText = document.createTextNode(page.title);
+    const linkText = document.createTextNode(title);
+    if (template === "animal-crossing") {
+      const jsDate = new Date(date);
+      const astrologyDateRange = getAstrologyDateRange(jsDate);
+      listItem.style.backgroundImage = `url("/images/star-fragments/fragment_${astrologyDateRange}.png")`;
+    }
 
     link.appendChild(linkText);
     listItem.appendChild(link);
-    list.appendChild(listItem);
+    listOfPages.push(listItem);
   });
+
+  list.append(...listOfPages);
 }
 
 function generateTemplateParams(path, page) {
@@ -133,7 +139,12 @@ export function getGrassColor(shape, date) {
 
 const astrologyDateRanges = {
   aquarius: "0120-0218",
-  aries: "0321-0419"
+  pisces: "0219-0320",
+  aries: "0321-0419",
+  taurus: "0420-0520",
+  cancer: "0622-0722",
+  leo: "0723-0822",
+  capricorn: "1222-0119"
 };
 
 export function getAstrologyDateRange(date) {
@@ -147,46 +158,55 @@ export function getAstrologyDateRange(date) {
   switch (month) {
     case 1:
       if (day <= 19) {
-        //
+        return astrologyDateRanges.pisces;
       } else {
         return astrologyDateRanges.aquarius;
       }
-      break;
     case 2:
       if (day <= 18) {
         return astrologyDateRanges.aquarius;
       } else {
-        //
+        return astrologyDateRanges.pisces;
       }
-      break;
     case 3:
       if (day <= 20) {
-        //
+        return astrologyDateRanges.pisces;
       } else {
         return astrologyDateRanges.aries;
       }
-      break;
     case 4:
       if (day <= 19) {
         return astrologyDateRanges.aries;
       } else {
+        return astrologyDateRanges.taurus;
+      }
+    case 5:
+      if (day <= 20) {
+        return astrologyDateRanges.taurus;
+      } else {
         //
       }
       break;
-    // case 5:
-    // case 6:
-    //   dateRange = "0401-0722";
-    //   break;
-    // case 7:
-    //   if (day <= 22) {
-    //     dateRange = "0401-0722";
-    //   } else {
-    //     dateRange = "0723-0915";
-    //   }
-    //   break;
-    // case 8:
-    //   dateRange = "0723-0915";
-    //   break;
+    case 6:
+      if (day <= 21) {
+        //
+      } else {
+        return astrologyDateRanges.cancer;
+      }
+      break;
+    case 7:
+      if (day <= 22) {
+        return astrologyDateRanges.cancer;
+      } else {
+        return astrologyDateRanges.leo;
+      }
+    case 8:
+      if (day <= 22) {
+        return astrologyDateRanges.leo;
+      } else {
+        //
+      }
+      break;
     // case 9:
     //   if (day <= 15) {
     //     dateRange = "0723-0915";
@@ -212,14 +232,14 @@ export function getAstrologyDateRange(date) {
     //     dateRange = "1129-1209";
     //   }
     //   break;
-    // case 12:
-    //   if (day <= 9) {
-    //     dateRange = "1129-1209";
-    //   } else {
-    //     dateRange = "1210-0224";
-    //   }
-    //   break;
+    case 12:
+      if (day <= 21) {
+        //
+      } else {
+        return astrologyDateRanges.pisces;
+      }
+      break;
     default:
-      throw new Error ("something went wrong finding the star fragment.");
+      throw new Error (`something went wrong finding the star fragment for ${month}/${day}.`);
   }
 }

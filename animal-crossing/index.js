@@ -11,12 +11,13 @@ try {
   const body = document.querySelector("body");
   body.style.backgroundImage = `url("/images/grass/${grassColor}"`;
 
-  const bulletImageStyles = document.createElement("style");
-  bulletImageStyles.innerText = `.list > li { background-image: url("/images/star-fragments/fragment_${astrologyDateRange}.png"); }`;
-  document.head.appendChild(bulletImageStyles);
-
   const textBackground = document.querySelector("#text-background");
   textBackground.style.backgroundImage = `url("/images/sand/${grassColor}"`;
 } catch (e) {
+  const loadingEls = document.querySelectorAll(".loading");
+  loadingEls.innerText = e;
   handleErrors(e);
+} finally {
+  const loadingEls = document.querySelectorAll(".loading");
+  loadingEls.forEach(el => el.remove());
 }

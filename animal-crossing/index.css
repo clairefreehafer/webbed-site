@@ -18,6 +18,8 @@
 body {
   background-repeat: repeat;
   background-position: 2rem calc(70px + 1rem);
+  font-family: "FOT Seurat Pro B", Helvetica, Ariel, sans-serif;
+  font-weight: normal;
   margin: 0;
   font-weight: 200;
 }
@@ -69,32 +71,34 @@ svg {
 }
 
 h2, h3 {
-  font-family: "FOT Seurat Pro B", Helvetica, Ariel, sans-serif;
   font-weight: normal;
   margin: 0;
 }
 
 ul {
-  margin: 0;
+  margin: 0 0 2rem;
   padding: 0;
 }
 
 nav li {
   display: inline-block;
-  margin: 1rem 1rem 1rem 0;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  padding: 0 1rem 0 2.5rem;
+  vertical-align: middle;
+}
+
+#home-link {
+  background-image: url("/images/icons/nookphone-hhn.png");
 }
 
 #photography-link {
   background-image: url("/images/icons/nookphone-camera.png");
-  background-repeat: no-repeat;
-  background-position: 0, 0;
-  background-size: contain;
-  height: 1.5rem;
-  padding: 0.5rem 0 0 2.5rem;
 }
 
-.list {
-  margin-bottom: 2rem;
+#animal-crossing-link {
+  background-image: url("/images/icons/inventory-furniture.png");
 }
 
 .list > li {
@@ -102,8 +106,7 @@ nav li {
   background-position: left center;
   background-size: contain;
   display: inline-block;
-  padding: 0.5rem 0.5rem 0.5rem 2rem;
-  height: 1rem;
+  padding: 0 1rem 0 2rem;
   vertical-align: middle;
   margin: 0 0 0.5rem;
 }
