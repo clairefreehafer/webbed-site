@@ -17,10 +17,10 @@
 
 body {
   background-repeat: repeat;
-  background-position: 2rem calc(70px + 1rem);
+  background-position: 2rem calc(70px + 10rem);
   font-family: "FOT Seurat Pro B", Helvetica, Ariel, sans-serif;
   font-weight: normal;
-  margin: 0;
+  margin: 0 0 2rem 0;
   font-weight: 200;
 }
 
@@ -80,6 +80,20 @@ ul {
   padding: 0;
 }
 
+nav {
+  background-color: rgb(248, 245, 223, 0.8);
+  border-radius: 3rem;
+  box-shadow: 0 0.75rem 0.5rem -0.5rem rgba(0, 0, 0, 0.5);
+  height: 6rem;
+  padding: 1rem;
+  margin: 0 2rem 1rem;
+  text-align: center;
+}
+
+nav ul {
+  margin-bottom: 0;
+}
+
 nav li {
   display: inline-block;
   background-repeat: no-repeat;
@@ -87,6 +101,10 @@ nav li {
   background-size: contain;
   padding: 0 1rem 0 2.5rem;
   vertical-align: middle;
+}
+
+a {
+  color: rgb(85, 69, 64);
 }
 
 #home-link {
@@ -101,16 +119,42 @@ nav li {
   background-image: url("/images/icons/inventory-furniture.png");
 }
 
+#info-link {
+  background-image: url("/images/icons/nookphone-island-designer.png");
+}
+
 .list > li {
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
   display: inline-block;
-  padding: 0 1rem 0 2rem;
+  padding: 0 1rem 0 2.25rem;
   vertical-align: middle;
   margin: 0 0 0.5rem;
 }
 
 .list > li > a {
   display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-position: 1rem calc(70px + 15rem);
+  }
+
+  #text-background {
+    margin: 0 1rem;
+    padding: 120px 1rem 1rem;
+  }
+
+  nav {
+    padding-top: 0;
+    height: 12rem;
+    margin: 0 1rem 1rem;
+  }
+
+  nav li {
+    display: block;
+    text-align: left;
+  }
 }

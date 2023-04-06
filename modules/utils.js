@@ -20,7 +20,7 @@ export async function generatePageList(path, listName) {
 
   Object.keys(pages).forEach(pageKey => {
     const page = pages[pageKey];
-    const { template, title, date } = page;
+    const { template, title, date, icon } = page;
 
     const listItem = document.createElement("li");
     const link = document.createElement("a");
@@ -33,9 +33,13 @@ export async function generatePageList(path, listName) {
 
     const linkText = document.createTextNode(title);
     if (template === "animal-crossing") {
-      const jsDate = new Date(date);
-      const astrologyDateRange = getAstrologyDateRange(jsDate);
-      listItem.style.backgroundImage = `url("/images/star-fragments/fragment_${astrologyDateRange}.png")`;
+      if (icon) {
+        listItem.style.backgroundImage = `url("/images/characters/${icon}.png")`;
+      } else {
+        const jsDate = new Date(date);
+        const astrologyDateRange = getAstrologyDateRange(jsDate);
+        listItem.style.backgroundImage = `url("/images/star-fragments/fragment_${astrologyDateRange}.png")`;
+      }
     }
 
     link.appendChild(linkText);

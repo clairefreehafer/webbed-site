@@ -21,12 +21,22 @@
       img {
         box-sizing: border-box;
         width: auto;
-        border: 1.5rem solid white;
+        border: 1rem solid white;
         box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.3);
         place-self: center;
         max-height: calc(100vh - 6rem);
         object-fit: contain;
         max-width: 100%;
+      }
+
+      @media screen and (max-width: 600px) {
+        body {
+          padding: 1rem;
+        }
+
+        img {
+          border: 0.5rem solid white;
+        }
       }
     </style>
     <script type="module" src="./animal-crossing.js"></script>
