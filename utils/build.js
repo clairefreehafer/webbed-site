@@ -1,30 +1,47 @@
 const fs = require("fs").promises;
 
-async function generateNav(html) {
-  try {
-    const navSplit = html.split("<nav></nav>");
+const templateVariables = {
+  nav: "nav",
+};
 
-    if (navSplit.length !== 2) {
-      throw new Error("split html is more or less than 2 strings.");
+async function handleVariableReplacement(variable) {
+  try {
+    let newHtml = "";
+
+    switch (variable) {
+      case templateVariables.nav:
+        newHtml = await generateNav();
+      break;
+      default:
+        console.error(`no matching generator for variable ${variable}`);
     }
 
+    return newHtml;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function generateNav() {
+  try {
     const nav = await fs.readFile("./config/nav.json", "utf8");
     const config = JSON.parse(nav);
 
-    let navString = "<nav><ul>";
+    let navString = "<ul>";
 
     for (let page in config) {
       navString += `<li><a href="${config[page].href}">${page}</a></li>`;
     }
 
-    navString += "</ul></nav>";
+    navString += "</ul>";
 
-    return navSplit[0] + navString + navSplit[1];
+    return navString;
   } catch (error) {
     console.error(error);
   }
 }
 
 module.exports = {
+  handleVariableReplacement,
   generateNav
 };

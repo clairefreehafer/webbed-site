@@ -1,18 +1,21 @@
-const { generateNav } = require("./utils/build");
-
+const { handleVariableReplacement } = require("./utils/build");
 const fs = require("fs").promises;
 
+const templateVariableRegex = new RegExp("{{ ([\\w\\d]+) }}", "g");
 
 async function generatePage(path) {
   try {
-    const html = await fs.readFile(path, "utf8");
+    let html = await fs.readFile(path, "utf8");
 
-    const htmlWithNav = await generateNav(html);
+    const matches = html.matchAll(templateVariableRegex);
 
-    console.log(htmlWithNav)
+    for (const match of matches) {
+      const newHtml = await handleVariableReplacement(match[1]);
+      html = html.replace(match[0], newHtml);
+    }
 
     const newPath = path.replace("build-test", "build");
-    await fs.writeFile(newPath, htmlWithNav);
+    await fs.writeFile(newPath, html);
   } catch (error) {
     console.error(error);
   }
