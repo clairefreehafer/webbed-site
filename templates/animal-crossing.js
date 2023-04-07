@@ -8,6 +8,8 @@ async function generatePage(pageTitle, game) {
 
   const jsDate = new Date(date[0], date[1], date[2]);
 
+  // TODO: make this match date for each image, if applicable.
+  // maybe even include a nice transition?
   const body = document.querySelector("body");
   const grassShape = game === "new-leaf" ? "circle" : "triangle";
   body.style.backgroundImage = `url('../images/grass/${getGrassColor(grassShape, jsDate)}')`;

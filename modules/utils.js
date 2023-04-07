@@ -146,6 +146,7 @@ const astrologyDateRanges = {
   pisces: "0219-0320",
   aries: "0321-0419",
   taurus: "0420-0520",
+  gemini: "0521-0621",
   cancer: "0622-0722",
   leo: "0723-0822",
   capricorn: "1222-0119"
@@ -188,12 +189,12 @@ export function getAstrologyDateRange(date) {
       if (day <= 20) {
         return astrologyDateRanges.taurus;
       } else {
-        //
+        return astrologyDateRanges.gemini;
       }
       break;
     case 6:
       if (day <= 21) {
-        //
+        return astrologyDateRanges.gemini;
       } else {
         return astrologyDateRanges.cancer;
       }

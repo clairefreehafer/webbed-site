@@ -26,13 +26,48 @@
     ],
     "template": "animal-crossing"
   },
-  "thinking ahead": {
-    "title": "thinking ahead",
+  "self portraits": {
+    "title": "self portraits",
     "date": [2020, 3, 21],
     "images": [
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-3RWVdBz/2/11fa9c20/X2/2020-03-21-18-29-51-X2.jpg",
-        "alt": ""
+        "alt": "",
+        "date": [2020, 3, 21]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-7LJjTrB/2/6fe2ba45/X2/2020-03-21-21-18-18-X2.jpg",
+        "alt": "",
+        "title": "investing in the future",
+        "date": [2002, 3, 21]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-Ncn7KFV/2/c4035e2d/X2/2020-03-22-18-36-44-X2.jpg",
+        "alt": "a photo of my character taken at sunset. they are standing on a rocky outcropping with a small, triangular-shapped tide pool to their left.",
+        "title": "tide pool",
+        "date": [2020, 3, 22]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-V4tCsGV/2/5b1931f9/X2/2020-03-22-20-44-50-X2.jpg",
+        "alt": "a photo of my character standing at the entrance to the island at dusk. there is a torch on either side of them.",
+        "title": "welcome to avalar",
+        "date": [2020, 3, 22]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-vGrSG62/2/220eeddf/X2/2020-03-22-22-05-17-X2.jpg",
+        "alt": "a photo taken from a high angle of my character fishing in the ocean. a large fish shadow is nibbling on my bobber.",
+        "date": [2020, 3, 22]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-264MqJm/2/e8b395be/X2/2020-03-29-22-18-56-X2.jpg",
+        "alt": "a photo of my character taken from a high angle. they are laying on a beach chair at night.",
+        "date": [2020, 3, 29]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-LX6Fc9m/2/959843d4/X2/2020-05-02-09-13-01-X2.jpg",
+        "alt": "my character sits on a bench in the plaza. the bench is clipping into one of the stools set up for k.k. slider's saturday concert.",
+        "title": "conflict",
+        "date": [2020, 5, 2]
       }
     ],
     "template": "animal-crossing"
@@ -44,18 +79,13 @@
     "images": [
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-dtQxFtd/3/1b9cdb36/X2/2020-03-21-20-58-27-X2.jpg",
-        "alt": ""
-      }
-    ],
-    "template": "animal-crossing"
-  },
-  "investing in the future": {
-    "title": "investing in the future",
-    "date": [2002, 3, 21],
-    "images": [
+        "alt": "",
+        "date": [2020, 3, 21]
+      },
       {
-        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-7LJjTrB/2/6fe2ba45/X2/2020-03-21-21-18-18-X2.jpg",
-        "alt": ""
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-TwR9DBP/2/24a81968/X2/2020-08-01-12-19-22-X2.jpg",
+        "alt": "",
+        "date": [2020, 8, 1]
       }
     ],
     "template": "animal-crossing"
@@ -67,51 +97,51 @@
     "images": [
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-w8Rr7z3/3/fc12ff3a/X2/2020-03-22-14-18-21-X2.jpg",
-        "alt": "dom and my player character fish from opposite sides of a river."
-      }
-    ],
-    "template": "animal-crossing"
-  },
-  "tide pool": {
-    "title": "tide pool",
-    "date": [2020, 3, 22],
-    "images": [
+        "alt": "dom and my player character fish from opposite sides of a river.",
+        "date": [2020, 3, 22]
+      },
       {
-        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-Ncn7KFV/2/c4035e2d/X2/2020-03-22-18-36-44-X2.jpg",
-        "alt": "a photo of my character taken at sunset. they are standing on a rocky outcropping with a small, triangular-shapped tide pool to their left."
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-fKkHJh3/2/42c0cb1f/X2/2020-05-06-18-58-31-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 6]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-sb2nnXj/2/06fe0c25/X2/2020-05-09-19-12-44-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 9]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-CS7Mbwx/2/cb59df69/X2/2020-05-17-22-42-21-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 17]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-NTkHvB7/2/4dc08b7e/X2/2020-05-27-23-16-33-X2.jpg",
+        "alt": "a photo of dom saying \"like, for isntance, i asked isabelle if we could get a training gym. she said no.\" with a sad look on his face.",
+        "date": [2020, 5, 27]
       }
     ],
     "template": "animal-crossing"
   },
-  "when will my body return from the war?": {
-    "title": "when will my body return from the war?",
+  "skelly": {
+    "title": "skelly",
     "date": [2020, 3, 22],
     "images": [
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-6XNT2sJ/2/e87d4d97/X2/2020-03-22-18-37-28-X2.jpg",
-        "alt": "a photo of a skeleton at sunset. it is on the island peninsula facing out towards the sea."
-      }
-    ],
-    "template": "animal-crossing"
-  },
-  "welcome to avalar": {
-    "title": "welcome to avalar",
-    "date": [2020, 3, 22],
-    "images": [
+        "alt": "a photo of a skeleton at sunset. it is on the island peninsula facing out towards the sea.",
+        "title": "when will my body return from the war?",
+        "date": [2020, 3, 22]
+      },
       {
-        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-V4tCsGV/2/5b1931f9/X2/2020-03-22-20-44-50-X2.jpg",
-        "alt": "a photo of my character standing at the entrance to the island at dusk. there is a torch on either side of them."
-      }
-    ],
-    "template": "animal-crossing"
-  },
-  "ocean fishing": {
-    "title": "ocean fishing",
-    "date": [2020, 3, 22],
-    "images": [
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-9VQPmzx/1/6a58f0eb/X2/2020-05-06-01-31-35-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 6]
+      },
       {
-        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-vGrSG62/2/220eeddf/X2/2020-03-22-22-05-17-X2.jpg",
-        "alt": "a photo taken from a high angle of my character fishing in the ocean. a large fish shadow is nibbling on my bobber."
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-CGcHfpp/2/e824baa1/X2/2020-05-06-01-33-32-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 6]
       }
     ],
     "template": "animal-crossing"
@@ -136,8 +166,8 @@
     ],
     "template": "animal-crossing"
   },
-  "hodge podge": {
-    "title": "hodge podge",
+  "interiors": {
+    "title": "interiors",
     "date": [2020, 3, 25],
     "images": [
       {
@@ -147,19 +177,8 @@
     ],
     "template": "animal-crossing"
   },
-  "relax": {
-    "title": "relax",
-    "date": [2020, 3, 29],
-    "images": [
-      {
-        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-264MqJm/2/e8b395be/X2/2020-03-29-22-18-56-X2.jpg",
-        "alt": "a photo of my character taken from a high angle. they are laying on a beach chair at night."
-      }
-    ],
-    "template": "animal-crossing"
-  },
-  "business development": {
-    "title": "business development",
+  "island development": {
+    "title": "island development",
     "date": [2020, 4, 6],
     "images": [
       {
@@ -169,13 +188,26 @@
     ],
     "template": "animal-crossing"
   },
-  "the gang's all here": {
-    "title": "the gang's all here",
+  "k.k. slider": {
+    "title": "k.k. slider",
     "date": [2020, 4, 13],
+    "icon": "kk-slider",
     "images": [
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-3fKtvhL/2/9c2db3c1/X2/2020-04-13-10-53-24-X2.jpg",
-        "alt": ""
+        "alt": "",
+        "title": "the gang's all here",
+        "date": [2020, 4, 13]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-sb2nnXj/2/06fe0c25/X2/2020-05-09-19-12-44-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 9]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-TwR9DBP/2/24a81968/X2/2020-08-01-12-19-22-X2.jpg",
+        "alt": "",
+        "date": [2020, 8, 1]
       }
     ],
     "template": "animal-crossing"
@@ -194,6 +226,16 @@
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-7ZWpDMV/2/852f52dd/X2/2020-05-02-01-02-55-X2.jpg",
         "alt": "",
         "date": [2020, 5, 2]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-VNVLj5G/2/8a6d7f97/X2/2020-05-24-20-17-28-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 24]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-7VCKLRb/2/a670c2a6/X2/2020-05-27-23-24-15-X2.jpg",
+        "alt": "a photo of flora saying \"ACAB!\"",
+        "date": [2020, 5, 27]
       }
     ],
     "template": "animal-crossing"
@@ -211,18 +253,22 @@
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-WLnCHFb/2/75345ccd/X2/2020-05-02-09-53-20-X2.jpg",
         "alt": "",
-        "date": [2020, 5, 20]
-      }
-    ],
-    "template": "animal-crossing"
-  },
-  "conflict": {
-    "title": "conflict",
-    "date": [2020, 5, 2],
-    "images": [
+        "date": [2020, 5, 2]
+      },
       {
-        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-LX6Fc9m/2/959843d4/X2/2020-05-02-09-13-01-X2.jpg",
-        "alt": "my character sits on a bench in the plaza. the bench is clipping into one of the stools set up for k.k. slider's saturday concert."
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-H5XNTmJ/2/18aeca34/X2/2020-05-17-13-33-04-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 17]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-tR5Cn42/2/1a8d450d/X2/2020-05-25-15-18-21-X2.jpg",
+        "alt": "a photo of rex saying \"it has some vibes that i can't quite explain.\" with a concerned look on his face.",
+        "date": [2020, 5, 25]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-7gL69cK/2/773046c4/X2/2020-05-28-18-39-06-X2.jpg",
+        "alt": "a photo of rex saying \"ACAB ACAB... ACAB!\"",
+        "date": [2020, 5, 28]
       }
     ],
     "template": "animal-crossing"
@@ -234,7 +280,18 @@
     "images": [
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-PB8MPh2/2/3ff2e234/X2/2020-05-02-15-53-55-X2.jpg",
-        "alt": ""
+        "alt": "",
+        "date": [2020, 5, 2]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-FWKPkt2/2/e6c5a1e0/X2/2020-05-12-18-06-52-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 12]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-C9B2Rwj/2/699396b2/X2/2020-05-25-14-59-00-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 25]
       }
     ],
     "template": "animal-crossing"
@@ -250,43 +307,137 @@
     ],
     "template": "animal-crossing"
   },
-  "midnight snack": {
-    "title": "midnight snack",
+  "elora": {
+    "title": "elora",
     "date": [2020, 5, 6],
     "images": [
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-LPF42Sf/2/5b9c5c31/X2/2020-05-06-01-14-59-X2.jpg",
-        "alt": ""
-      }
-    ],
-    "template": "animal-crossing"
-  },
-  "field of dreams": {
-    "title": "field of dreams",
-    "date": [2020, 5, 6],
-    "images": [
+        "alt": "",
+        "title": "midnight snack",
+        "date": [2020, 5, 6]
+      },
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-PKz7JDK/2/eb0d036d/X2/2020-05-06-01-18-19-X2.jpg",
+        "alt": "",
+        "title": "field of dreams",
+        "date": [2020, 5, 6]
+      }
+    ],
+    "template": "animal-crossing"
+  },
+  "octavian": {
+    "title": "octavian",
+    "date": [2020, 5, 6],
+    "icon": "octavian",
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-TmXzwZw/2/30a11e3a/X2/2020-05-06-22-47-57-X2.jpg",
+        "alt": "",
+        "title": "spaceman",
+        "date": [2020, 5, 6]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-VR4PTwn/2/89120e6f/X2/2020-05-07-20-09-38-X2.jpg",
+        "alt": "",
+        "title": "occupied",
+        "date": [2020, 5, 7]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-sgNXrxM/2/76d5ab26/X2/2020-05-07-20-10-15-X2.jpg",
+        "alt": "",
+        "title": "relief",
+        "date": [2020, 5, 7]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-p3JPqMZ/3/612fb589/X2/2020-08-07-14-11-39-X2.jpg",
+        "alt": "",
+        "date": [2020, 8, 7]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-QzbJgSL/3/423d2645/X2/2020-08-07-14-11-36-X2.jpg",
+        "alt": "",
+        "date": [2020, 8, 7]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-PwKZKhW/3/06751ca2/X2/2020-08-07-14-11-16-X2.jpg",
+        "alt": "",
+        "date": [2020, 8, 7]
+      }
+    ],
+    "template": "animal-crossing"
+  },
+  "norma": {
+    "title": "norma",
+    "date": [2020, 5, 7],
+    "icon": "norma",
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-LS4RKqw/2/ab670e60/X2/2020-05-07-20-11-46-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 7]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-qdFr7VQ/2/639638a1/X2/2020-05-09-14-22-39-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 9]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-3rm2Fb2/2/344f4932/X2/2020-05-09-14-22-43-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 9]
+      }
+    ],
+    "template": "animal-crossing"
+  },
+  "her": {
+    "title": "her",
+    "date": [2020, 5, 9],
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-VL56R42/2/0524f0c7/X2/2020-05-09-22-29-30-X2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-ms23nxh/2/f1f8e58a/X2/2020-05-09-22-29-42-X2.jpg",
         "alt": ""
       }
     ],
     "template": "animal-crossing"
   },
-  "his biggest fan": {
-    "title": "his biggest fan",
-    "date": [2020, 8, 1],
+  "landscapes": {
+    "title": "landscapes",
+    "date": [2020, 5, 10],
     "images": [
       {
-        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-TwR9DBP/2/24a81968/X2/2020-08-01-12-19-22-X2.jpg",
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-q7vNVGM/2/9ac65b02/X2/2020-05-10-11-35-39-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 10]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-jRnZD7h/2/9190b1d3/X2/2020-05-10-12-16-08-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 10]
+      },
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-88fF5qs/2/ee637393/X2/2020-05-12-14-55-03-X2.jpg",
+        "alt": "",
+        "date": [2020, 5, 12]
+      }
+    ],
+    "template": "animal-crossing"
+  },
+  "tom": {
+    "title": "tom",
+    "date": [2022, 5, 12],
+    "icon": "tom",
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-BwhgMRk/2/7545068f/X2/2020-05-12-18-03-48-X2.jpg",
         "alt": ""
       }
     ],
-    "template": "animal-crossing",
-    "styles": {
-      "#image-0": {
-        "border": "none"
-      }
-    }
+    "template": "animal-crossing"
   },
   "sprinkle": {
     "title": "sprinkle",
@@ -296,6 +447,19 @@
       {
         "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-wDwP6hs/3/919ff158/X2/2020-08-02-20-52-22-X2.jpg",
         "alt": ""
+      }
+    ],
+    "template": "animal-crossing"
+  },
+  "samson": {
+    "title": "samson",
+    "date": [2020, 5, 11],
+    "icon": "samson",
+    "images": [
+      {
+        "src": "https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-5dg7Nt5/2/fb215fe2/X2/2020-05-11-17-12-02-X2.jpg",
+        "alt": "a screenshot of samson saying \"Oh, I don't need anything in return. It's just a little somethin' somethin', y'know, saucy?\"",
+        "date": [2020, 5, 11]
       }
     ],
     "template": "animal-crossing"

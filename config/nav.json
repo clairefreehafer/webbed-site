@@ -1,0 +1,11 @@
+{
+  "home": {
+    "href": "/"
+  },
+  "photography": {
+    "href": "/photography/index.html"
+  },
+  "animal crossing": {
+    "href": "/animal-crossing/index.html"
+  }
+}
