@@ -1,24 +1,22 @@
-const fs = require("fs");
+const { generateNav } = require("./utils/build");
 
-const templates = fs.readdir("./templates", (err, data) => {
-  if (err) throw err;
-  return data.filter(file => file.includes("html"));
-});
+const fs = require("fs").promises;
 
-// build nav
-const navConfig = fs.readFile("./config/nav.json", "utf8", (err, data) => {
-  if (err) throw err;
-  return JSON.parse(nav);
-});
 
-const pagesWithLinks = [
-  ""
-]
+async function generatePage(path) {
+  try {
+    const html = await fs.readFile(path, "utf8");
 
-// build page links
-// fs.readFile("./animal-crossing/new-horizons/pageDefinitions.json", "utf8", (err, data) => {
-//   if (err) throw err;
-//   console.log(JSON.parse(data));
-// });
+    const htmlWithNav = await generateNav(html);
 
-// build pages
+    console.log(htmlWithNav)
+
+    const newPath = path.replace("build-test", "build");
+    await fs.writeFile(newPath, htmlWithNav);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// home page
+generatePage("./build-test/index.html");
