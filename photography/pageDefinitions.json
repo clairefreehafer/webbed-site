@@ -65,6 +65,15 @@
     ],
     "template": "photography"
   },
+  "no hiring": {
+    "title": "no hiring",
+    "images": [
+      {
+        "key": "7RLxSBR",
+        "alt": ""
+      }
+    ]
+  },
   "rippley": {
     "title": "rippley",
     "images": [

@@ -28,18 +28,19 @@ async function generatePhotographyPages() {
       }
 
       // add it to the list
-      listString += `<li><a href="/build/photography/${page.replaceAll(" ", "-").html}">${page}</a></li>`
+      listString += `<li><a href="/photography/${page.replaceAll(" ", "-")}.html">${page}</a></li>`
     }
 
     listString += "</ul>";
 
     // add final links list to main page
-    let index = await fs.readFile(path.join(__dirname, "build-test", "photography", "index.html"), "utf8");
+    let index = await fs.readFile(path.join(__dirname, "..", "photography", "index.html"), "utf8");
     index = replaceVariable("photographyList", listString, index);
 
     // TODO: add nav links
 
-    await fs.writeFile(path.join(__dirname, "build", "photography", "index.html"), index);
+    await makeDirectoryIfDoesntExist(["..", "build", "photography"]);
+    await fs.writeFile(path.join(__dirname, "..", "build", "photography", "index.html"), index);
   } catch (error) {
     console.error(error);
   }

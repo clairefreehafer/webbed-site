@@ -4,9 +4,8 @@ const path = require("node:path");
 
 if (existsSync(path.join(__dirname, "build"))) {
   rmSync(path.join(__dirname, "build"), { recursive: true });
-} else {
-  mkdirSync(path.join(__dirname, "build"));
 }
+mkdirSync(path.join(__dirname, "build"));
 
 generatePhotographyPages();
 
