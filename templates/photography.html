@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>claire freehafer</title>
+    <title>{{ title }} – claire freehafer</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <style>
       body {
@@ -26,9 +26,11 @@
         width: 100%;
         object-fit: contain;
       }
+
+      {{ styles }}
     </style>
-    <script type="module" src="./photography.js"></script>
   </head>
   <body>
+    {{ images }}
   </body>
 </html>

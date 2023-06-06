@@ -1,6 +1,7 @@
 const fs = require("fs").promises;
 const path = require("node:path");
 const { existsSync } = require("fs");
+const { SMUGMUG_API_KEY } = require("../creds");
 
 // const templateVariables = {
 //   nav: "nav",
@@ -22,9 +23,9 @@ async function generatePhotographyPages() {
 
       // create the page
       if (template) {
-        fillTemplate(pageConfig);
+        generatePhotographyPage(pageConfig);
       } else {
-
+        console.log(`No template for ${pageConfig.title}`);
       }
 
       // add it to the list
@@ -46,16 +47,62 @@ async function generatePhotographyPages() {
   }
 }
 
+async function generatePhotographyPage(page) {
+  try {
+    const { template, title } = page;
+    let html = await fs.readFile(path.join(__dirname, "..", "templates", `${template}.html`), "utf8");
+
+    // page title
+    html = replaceVariable("title", title, html);
+
+    // page layout
+    const { images, cols } = page;
+    let styles = `body {
+      /* create row for each image. */
+      grid-template-rows: repeat(${images.length}, auto);
+    }`;
+
+    html = replaceVariable("styles", styles, html);
+
+    // add images
+    let imageHtml = "";
+
+    for (const image of images)  {
+      if (!image.key) return;
+
+      const response = await fetch(`https://api.smugmug.com/api/v2/image/${image.key}!largestimage?APIKey=${SMUGMUG_API_KEY}&shorturis=`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      const responseJson = await response.json();
+
+      imageHtml += `<img src="${responseJson.Response.LargestImage.Url}" alt="${image.alt}" />`
+    };
+
+    html = replaceVariable("images", imageHtml, html);
+
+    // create file
+    await makeDirectoryIfDoesntExist(["..", "build", "photography"]);
+    const location = path.join(__dirname, `../build/photography/${title.replaceAll(" ", "-")}.html`);
+    await fs.writeFile(location, html);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 async function fillTemplate(page) {
   try {
     const { template, title } = page;
     const html = await fs.readFile(path.join(__dirname, "..", "templates", `${template}.html`), "utf8");
 
-    const templateVariables = html.matchAll(templateVariableRegex);
+    // const templateVariables = html.matchAll(templateVariableRegex);
 
-    for (const variable of templateVariables) {
-      html = replaceVariable(variable[1]);
-    }
+    // for (const variable of templateVariables) {
+    //   console.log(variable)
+    //   html = replaceVariable(variable[1], page[variable[1]], html);
+    // }
 
     await makeDirectoryIfDoesntExist(["..", "build", "pages"]);
     const location = path.join(__dirname, `../build/pages/${title.replaceAll(" ", "-")}.html`);
