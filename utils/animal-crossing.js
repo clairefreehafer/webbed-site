@@ -26,7 +26,7 @@ async function generateAnimalCrossingPages() {
         // create the page
         if (template) {
           generateAnimalCrossingPage(pageConfig, game);
-          console.log(`generated page animal-crossing/${game}/ ${pageConfig.title}`)
+          console.log(`generated animal-crossing / ${game} / ${pageConfig.title}`)
         } else {
           console.log(`No template for ${pageConfig.title}`);
         }
@@ -40,12 +40,9 @@ async function generateAnimalCrossingPages() {
           const astrologyDateRange = getAstrologyDateRange(jsDate);
           listItemStyle = `background-image: url('/images/star-fragments/fragment_${astrologyDateRange}.png');`;
         }
-        console.log(listItemStyle)
 
         // add it to the list
         listString += `<li style="${listItemStyle}"><a href="./${game}/${page.replaceAll(" ", "-")}.html">${page}</a></li>`;
-
-        console.log(listString)
       }
 
       listString += "</ul>";
@@ -61,6 +58,7 @@ async function generateAnimalCrossingPages() {
 
     // create index
     await fs.writeFile(path.join(__dirname, "..", "build", "animal-crossing", "index.html"), index);
+    console.log("generated animal-crossing / index.html")
   } catch (error) {
     console.error(error);
   }

@@ -1,6 +1,4 @@
 import handleErrors from "../modules/errorHandling.js";
-import { applyCustomStyles, renderImages } from "../modules/fillTemplate.js";
-import { getPageConfig } from "../modules/utils.js";
 
 function renderSlideTitle(title) {
   const titleEl = document.querySelector("#title");
@@ -26,8 +24,7 @@ function configureSlideCount(currentSlideIndex, numberOfSlides) {
   slideCount.appendChild(slideCountText);
 }
 
-function createSlideShow(images) {
-  // images are rendered with this class name
+function createSlideShow() {
   const slides = document.getElementsByTagName("img");
   let currentSlideIndex = 0;
   const numberOfSlides = slides.length;
@@ -60,7 +57,7 @@ function createSlideShow(images) {
       nextSlide.classList.add("fade-in");
       nextSlide.classList.add("active");
 
-      const imageTitle = images[currentSlideIndex].title;
+      const imageTitle = slides[currentSlideIndex].title;
 
       renderSlideTitle(imageTitle);
       configureSlideCount(currentSlideIndex, numberOfSlides)
@@ -74,7 +71,7 @@ function createSlideShow(images) {
   const prevButton = document.getElementById("prev");
   prevButton.addEventListener("click", (e) => handleButtonClick(e, -1));
 
-  const imageTitle = images[currentSlideIndex].title;
+  const imageTitle = slides[currentSlideIndex].title;
   renderSlideTitle(imageTitle);
 
   configureSlideCount(currentSlideIndex, numberOfSlides);
@@ -83,19 +80,8 @@ function createSlideShow(images) {
   slides[0].classList.add("active");
 }
 
-async function generatePage(pageTitle) {
-  let page = await getPageConfig(pageTitle, "photography");
-  const { images, styles } = page;
-
-  createSlideShow(images);
-  applyCustomStyles(styles);
-}
-
 try {
-  const { pathname } = window.location;
-  const title = pathname.match(/[^\/]+(?=\.html)/)[0].replaceAll("-", " ");
-
-  generatePage(title);
+  createSlideShow();
 } catch (e) {
   handleErrors(e);
 }

@@ -5,6 +5,8 @@ const { generateNav, makeDirectoryIfDoesntExist, replaceVariable, getPageConfig 
 
 async function generatePhotographyPages() {
   try {
+    await makeDirectoryIfDoesntExist(["..", "build", "photography"]);
+
     const configJson = await getPageConfig("photography");
 
     // for the list of pages on the main page
@@ -17,6 +19,7 @@ async function generatePhotographyPages() {
       // create the page
       if (template) {
         generatePhotographyPage(pageConfig);
+        console.log(`generated photography / ${pageConfig.title}`);
       } else {
         console.log(`No template for ${pageConfig.title}`);
       }
@@ -35,8 +38,8 @@ async function generatePhotographyPages() {
     index = generateNav(index);
 
     // create index
-    await makeDirectoryIfDoesntExist(["..", "build", "photography"]);
     await fs.writeFile(path.join(__dirname, "..", "build", "photography", "index.html"), index);
+    console.log("generated photography / index.html")
   } catch (error) {
     console.error(error);
   }
@@ -83,7 +86,7 @@ async function generatePhotographyPage(page) {
         throw new Error ("no image url!");
       }
 
-      imageHtml += `<img src="${imageSrc}" alt="${image.alt}" id="image-${i}" />`
+      imageHtml += `<img src="${imageSrc}" alt="${image.alt}" id="image-${i}" title="${image.title || ""}" />`
     };
 
     html = replaceVariable("images", imageHtml, html);
