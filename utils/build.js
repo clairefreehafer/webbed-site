@@ -29,7 +29,7 @@ async function generatePhotographyPages() {
       }
 
       // add it to the list
-      listString += `<li><a href="/photography/${page.replaceAll(" ", "-")}.html">${page}</a></li>`
+      listString += `<li><a href="./${page.replaceAll(" ", "-")}.html">${page}</a></li>`
     }
 
     listString += "</ul>";
@@ -38,7 +38,8 @@ async function generatePhotographyPages() {
     let index = await fs.readFile(path.join(__dirname, "..", "photography", "index.html"), "utf8");
     index = replaceVariable("photographyList", listString, index);
 
-    // TODO: add nav links
+    // add nav links
+    index = generateNav(index);
 
     await makeDirectoryIfDoesntExist(["..", "build", "photography"]);
     await fs.writeFile(path.join(__dirname, "..", "build", "photography", "index.html"), index);
@@ -50,6 +51,7 @@ async function generatePhotographyPages() {
 async function generatePhotographyPage(page) {
   try {
     const { template, title } = page;
+    // get template HTML
     let html = await fs.readFile(path.join(__dirname, "..", "templates", `${template}.html`), "utf8");
 
     // page title
@@ -67,18 +69,27 @@ async function generatePhotographyPage(page) {
     // add images
     let imageHtml = "";
 
-    for (const image of images)  {
-      if (!image.key) return;
+    for (let i = 0; i < images.length; i++)  {
+      const image = images[i];
+      let imageSrc;
 
-      const response = await fetch(`https://api.smugmug.com/api/v2/image/${image.key}!largestimage?APIKey=${SMUGMUG_API_KEY}&shorturis=`, {
-        headers: {
-          Accept: "application/json",
-        },
-      });
+      if (image.key) {
+        const response = await fetch(`https://api.smugmug.com/api/v2/image/${image.key}!largestimage?APIKey=${SMUGMUG_API_KEY}&shorturis=`, {
+          headers: {
+            Accept: "application/json",
+          },
+        });
 
-      const responseJson = await response.json();
+        const responseJson = await response.json();
 
-      imageHtml += `<img src="${responseJson.Response.LargestImage.Url}" alt="${image.alt}" />`
+        imageSrc = responseJson.Response.LargestImage.Url;
+      } else if (image.src) {
+        imageSrc = image.src;
+      } else {
+        throw new Error ("no image url!");
+      }
+
+      imageHtml += `<img src="${imageSrc}" alt="${image.alt}" id="image-${i}" />`
     };
 
     html = replaceVariable("images", imageHtml, html);
@@ -90,6 +101,18 @@ async function generatePhotographyPage(page) {
   } catch (e) {
     console.error(e);
   }
+}
+
+function generateNav(html, currentPage) {
+  const nav = `
+    <ul>
+      <li><a href="/index.html">home</a></li>
+      <li><a href="/photgraphy/index.html">photography</a></li>
+      <li><a href="/animal-crossing/index.html">animal crossing</a></li>
+    </ul>
+  `;
+
+  return replaceVariable("nav", nav, html);
 }
 
 async function fillTemplate(page) {

@@ -28,7 +28,7 @@ function configureSlideCount(currentSlideIndex, numberOfSlides) {
 
 function createSlideShow(images) {
   // images are rendered with this class name
-  const slides = document.getElementsByClassName("slide");
+  const slides = document.getElementsByTagName("img");
   let currentSlideIndex = 0;
   const numberOfSlides = slides.length;
 
@@ -85,18 +85,15 @@ function createSlideShow(images) {
 
 async function generatePage(pageTitle) {
   let page = await getPageConfig(pageTitle, "photography");
-  const { title, images, styles } = page;
-  const container = document.querySelector("body");
+  const { images, styles } = page;
 
-  document.title = `${title} – claire freeahfer`;
-
-  renderImages(images, container, "slide");
   createSlideShow(images);
   applyCustomStyles(styles);
 }
 
 try {
-  const title = new URLSearchParams(window.location.search).get("title");
+  const { pathname } = window.location;
+  const title = pathname.match(/[^\/]+(?=\.html)/)[0].replaceAll("-", " ");
 
   generatePage(title);
 } catch (e) {

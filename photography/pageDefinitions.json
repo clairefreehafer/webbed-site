@@ -3,27 +3,31 @@
     "title": "birds in a line",
     "images": [
       {
-        "src": "https://photos.smugmug.com/Rehoboth-2022/i-2B95nNL/0/ba6191fc/X5/2022-06-16-20-23-46-X5.jpg",
+        "key": "2B95nNL",
         "alt": "",
         "title": "rehoboth beach, delaware"
       },
       {
         "src": "https://photos.smugmug.com/Rehoboth-2022/i-cnjtDmT/0/60657af5/X5/2022-06-16-20-23-50-X5.jpg",
+        "key": "cnjtDmT",
         "alt": "",
         "title": "rehoboth beach, delaware"
       },
       {
         "src": "https://photos.smugmug.com/Road-Trip-through-Kaikoura/i-7hXmv6W/2/9bc0f21a/X5/2019-02-21-18-26-30-X5.jpg",
+        "key": "7hXmv6W",
         "alt": "",
         "title": "kaikoura, aotearoa"
       },
       {
         "src": "https://photos.smugmug.com/Colgate-University/i-grMnF5P/2/283eaefa/X4/2013-11-02-15-52-29-X4.jpg",
+        "key": "grMnF5P",
         "alt": "",
         "title": "colgate university"
       },
       {
         "src": "https://photos.smugmug.com/Maine-2009/i-whxrtFb/1/3fde443d/X5/2009-07-19-06-26-52-X5.jpg",
+        "key": "whxrtFb",
         "alt": "",
         "title": "rockland, maine"
       }
@@ -114,11 +118,11 @@
     "title": "the guardians of virginia beach",
     "images": [
       {
-        "src": "https://photos.smugmug.com/Virginia-beach/i-vPmNBmh/1/cb581516/X4/2021-12-30-15-06-09-X4.jpg",
+        "key": "vPmNBmh",
         "alt": "a statue of poseiden along the virginia beach boardwalk. he holds a trident in one hand and a turtle in the other. his upper body is protruding from a large rock that has has various sea animals along the side."
       },
       {
-        "src": "https://photos.smugmug.com/Virginia-beach/i-hPPGSXV/1/89e8313a/X4/2021-12-30-15-51-51-X4.jpg",
+        "key": "hPPGSXV",
         "alt": "a large statue of a gorilla with a wide toothy grin. they are wearing glasses, a colorful shark tooth necklace, an unbuttoned aloha shirt, and board shorts."
       }
     ],

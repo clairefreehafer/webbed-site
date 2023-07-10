@@ -1,5 +1,5 @@
 export async function fetchPages(pageFolder) {
-  return fetch(`../${pageFolder}/pageDefinitions.json`)
+  return fetch(`../../${pageFolder}/pageDefinitions.json`)
     .then(response => response.json())
     .catch(e => {
       throw new Error("failed to fetch page definitions JSON " + e)
