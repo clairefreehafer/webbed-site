@@ -1,49 +1,7 @@
 const fs = require("fs").promises;
 const path = require("node:path");
 const { SMUGMUG_API_KEY } = require("../creds");
-const { generateNav, makeDirectoryIfDoesntExist, replaceVariable, getPageConfig } = require("./build");
-
-async function generatePhotographyPages() {
-  try {
-    await makeDirectoryIfDoesntExist(["..", "build", "photography"]);
-
-    const configJson = await getPageConfig("photography");
-
-    // for the list of pages on the main page
-    let listString = "<ul>";
-
-    for (const page in configJson) {
-      const pageConfig = configJson[page];
-      const { template } = pageConfig;
-
-      // create the page
-      if (template) {
-        generatePhotographyPage(pageConfig);
-        console.log(`generated photography / ${pageConfig.title}`);
-      } else {
-        console.log(`No template for ${pageConfig.title}`);
-      }
-
-      // add it to the list
-      listString += `<li><a href="./${page.replaceAll(" ", "-")}.html">${page}</a></li>`;
-    }
-
-    listString += "</ul>";
-
-    // add final links list to main page
-    let index = await fs.readFile(path.join(__dirname, "..", "photography", "index.html"), "utf8");
-    index = replaceVariable("photographyList", listString, index);
-
-    // add nav links
-    index = generateNav(index, "photography");
-
-    // create index
-    await fs.writeFile(path.join(__dirname, "..", "build", "photography", "index.html"), index);
-    console.log("generated photography / index.html")
-  } catch (error) {
-    console.error(error);
-  }
-}
+const { makeDirectoryIfDoesntExist, replaceVariable } = require("./build");
 
 async function generatePhotographyPage(page) {
   try {
@@ -101,5 +59,5 @@ async function generatePhotographyPage(page) {
 }
 
 module.exports = {
-  generatePhotographyPages
+  generatePhotographyPage
 };

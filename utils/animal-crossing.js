@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const path = require("node:path");
 const { generateNav, makeDirectoryIfDoesntExist, replaceVariable, getPageConfig } = require("./build");
 
-const GAMES = ["new-horizons", "new-leaf"];
+const ANIMAL_CROSSING_GAMES = ["new-horizons", "new-leaf"];
 
 async function generateAnimalCrossingPages() {
   try {
@@ -11,7 +11,7 @@ async function generateAnimalCrossingPages() {
 
     let listString = "";
 
-    for (const game of GAMES) {
+    for (const game of ANIMAL_CROSSING_GAMES) {
       await makeDirectoryIfDoesntExist(["..", "build", "animal-crossing", game]);
 
       const config = await getPageConfig(`animal-crossing/${game}`);
@@ -313,5 +313,6 @@ function getAstrologyDateRange(date) {
 
 module.exports = {
   generateAnimalCrossingPages,
+  generateAnimalCrossingPage,
   getGrassColor
 };

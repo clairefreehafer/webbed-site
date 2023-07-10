@@ -1,8 +1,8 @@
-const { generatePhotographyPages } = require("./utils/photography");
 const { rmSync, existsSync, mkdirSync, copyFileSync } = require("fs");
 const path = require("node:path");
 const { generateAnimalCrossingPages } = require("./utils/animal-crossing");
 const { generateIndex } = require("./utils");
+const { generatePageSet } = require("./utils/pages");
 
 if (existsSync(path.join(__dirname, "build"))) {
   rmSync(path.join(__dirname, "build"), { recursive: true });
@@ -17,5 +17,6 @@ for (const file of filesToCopy) {
 }
 
 generateIndex();
-generatePhotographyPages();
 generateAnimalCrossingPages();
+generatePageSet("photography");
+generatePageSet("zelda", ["breath-of-the-wild"]);
