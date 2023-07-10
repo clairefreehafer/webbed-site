@@ -24,11 +24,11 @@ async function generatePage(pageTitle, game) {
 }
 
 try {
-  const params = new URLSearchParams(window.location.search);
+  // const params = new URLSearchParams(window.location.search);
 
-  const title = params.get("title");
-  const game = params.get("game");
-  generatePage(title, game);
+  // const title = params.get("title");
+  // const game = params.get("game");
+  // generatePage(title, game);
 
 } catch (e) {
   handleErrors(e);

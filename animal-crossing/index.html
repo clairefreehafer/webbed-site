@@ -7,6 +7,15 @@
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="/animal-crossing/index.css" rel="stylesheet" type="text/css" media="all">
     <script src="/animal-crossing/index.js" type="module"></script>
+    <style>
+      body {
+        background-image: url("/images/grass/{{ grassColor }}");
+      }
+
+      #text-background {
+        background-image: url("/images/sand/{{ grassColor }}");
+      }
+    </style>
   </head>
   <body>
     <div class="svg-container">
@@ -64,14 +73,7 @@
 
     <div id="text-background">
       <h2>animal crossing</h2>
-      <h3>new horizons</h3>
-      <ul id="new-horizons-list" class="list">
-        <li class="loading">loading...</li>
-      </ul>
-      <h3>new leaf</h3>
-      <ul id="new-leaf-list" class="list">
-        <li class="loading">loading...</li>
-      </ul>
+      {{ animalCrossingList }}
     </div>
   </body>
 </html>

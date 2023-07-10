@@ -16,6 +16,7 @@
         margin: 0;
         padding: 3rem;
         background-repeat: repeat;
+        background-image: url('/images/grass/{{ grassColor }}')
       }
 
       img {
@@ -38,9 +39,12 @@
           border: 0.5rem solid white;
         }
       }
+
+      {{ styles }}
     </style>
     <script type="module" src="./animal-crossing.js"></script>
   </head>
   <body>
+    {{ images }}
   </body>
 </html>

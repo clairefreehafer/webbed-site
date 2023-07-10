@@ -44,9 +44,9 @@ async function fillTemplate(page) {
 /** can pass variable with or without brackets. */
 function replaceVariable(variable, content, html) {
   if (templateVariableRegex.test(variable)) {
-    return html.replace(variable, content);
+    return html.replaceAll(variable, content);
   }
-  return html.replace(`{{ ${variable} }}`, content);
+  return html.replaceAll(`{{ ${variable} }}`, content);
 }
 
 async function makeDirectoryIfDoesntExist(dirArr) {
