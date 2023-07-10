@@ -9,14 +9,24 @@ const { SMUGMUG_API_KEY } = require("../creds");
 
 const templateVariableRegex = new RegExp("{{ ([\\w\\d]+) }}", "g");
 
+const navLinks = ["home", "photography", "animal-crossing", "zelda"];
+
 function generateNav(html, currentPage) {
-  const nav = `
-    <ul>
-      <li><a href="/index.html">home</a></li>
-      <li><a href="/photgraphy/index.html">photography</a></li>
-      <li><a href="/animal-crossing/index.html">animal crossing</a></li>
-    </ul>
-  `;
+  if (!navLinks.includes(currentPage)) {
+    throw new Error("current page not recognized.");
+  }
+  let nav = "<ul>";
+
+  for (const page of navLinks) {
+    if (page === currentPage) {
+      nav += `<li class="current-page">${handleSpaces(page, "space")}</li>`;
+    } else {
+      const link = page === "home" ? "" : `${handleSpaces(page, "dash")}/`;
+      nav += `<li><a href="/${link}index.html">${handleSpaces(page, "space")}</a></li>`;
+    }
+  }
+
+  nav += "</ul>";
 
   return replaceVariable("nav", nav, html);
 }
@@ -134,6 +144,18 @@ async function getPageConfig(folder) {
     return JSON.parse(config);
   } catch (error) {
     console.error(error);
+  }
+}
+
+/** convert string to use dash for spaces or actual spaces */
+function handleSpaces(string, dashOrSpace) {
+  if (!["dash", "space"].includes(dashOrSpace)) {
+    throw new Error("need to know if using dashes or spaces!")
+  }
+  if (dashOrSpace === "dash") {
+    return string.replaceAll(" ", "-");
+  } else if (dashOrSpace === "space") {
+    return string.replaceAll("-", " ");
   }
 }
 

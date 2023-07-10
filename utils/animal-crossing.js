@@ -51,7 +51,7 @@ async function generateAnimalCrossingPages() {
     index = replaceVariable("animalCrossingList", listString, index);
 
     // add nav links
-    index = generateNav(index);
+    // index = generateNav(index);
 
     // background images
     index = replaceVariable("grassColor", getGrassColor("square"), index);

@@ -35,7 +35,7 @@ async function generatePhotographyPages() {
     index = replaceVariable("photographyList", listString, index);
 
     // add nav links
-    index = generateNav(index);
+    index = generateNav(index, "photography");
 
     // create index
     await fs.writeFile(path.join(__dirname, "..", "build", "photography", "index.html"), index);
