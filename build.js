@@ -10,7 +10,7 @@ if (existsSync(path.join(__dirname, "build"))) {
 mkdirSync(path.join(__dirname, "build"));
 
 // copy other static files for now
-const filesToCopy = ["index.js", "index.css", "not_found.html", "style.css", "neocities.png"];
+const filesToCopy = ["index.js", "index.css", "not_found.html", "style.css", "neocities.png", "images", "decker"];
 
 for (const file of filesToCopy) {
   copyFileSync(path.join(__dirname, file), path.join(__dirname, `build/${file}`));
