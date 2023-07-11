@@ -1,0 +1,8 @@
+body {
+  background-image: url("/images/pad-background.jpg");
+  color: white;
+}
+
+a, a:visited {
+  color: white;
+}

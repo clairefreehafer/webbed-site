@@ -1,14 +1,15 @@
 const fs = require("fs").promises;
-const path = require("node:path");
-const { generateNav } = require("./build");
+const { generateNav, replaceVariable } = require("./build");
 
 async function generateIndex() {
-  let index = await fs.readFile(path.join(__dirname, "..", "index.html"), "utf8");
+  let index = await fs.readFile("./templates/index.html", "utf8");
 
+  index = replaceVariable("title", "home", index);
   index = generateNav(index, "home");
+  index = replaceVariable("content", "", index);
 
-  await fs.writeFile(path.join(__dirname, "..", "build", "index.html"), index);
-  console.log("generated index.html")
+  await fs.writeFile("./index.html", index);
+  console.log("generated index.html");
 }
 
 module.exports = {

@@ -1,23 +1,18 @@
 const fs = require("fs").promises;
-const path = require("node:path");
 const { SMUGMUG_API_KEY } = require("../creds");
 
 const { makeDirectoryIfDoesntExist, getPageConfig, handleSpaces, replaceVariable, generateNav } = require("./build");
 
 async function generatePageSet(pageSet, subDirectories) {
-  // create directory for the files
-  await makeDirectoryIfDoesntExist(["..", "build", pageSet]);
-
   // create the list of the pages
-  let pageList = "";
+  let pageList = `<h2>${handleSpaces(pageSet, "space")}</h2>`;
 
   // if there are subdirectories, like AC/zelda games
   if (subDirectories) {
     for (const subDirectory of subDirectories) {
       const location = `${pageSet}/${subDirectory}`;
-      await makeDirectoryIfDoesntExist(["..", "build", location]);
 
-      const config = await getPageConfig(`${pageSet}/${subDirectory}`);
+      const config = await getPageConfig(location);
 
       pageList += `<h3>${handleSpaces(subDirectory, "space")}</h3><ul class="list">`;
 
@@ -32,14 +27,16 @@ async function generatePageSet(pageSet, subDirectories) {
   }
 
   // add final links list to main page
-  let index = await fs.readFile(path.join(__dirname, "..", pageSet, "index.html"), "utf8");
-  index = replaceVariable("list", pageList, index);
+  let index = await fs.readFile(`./templates/index.html`, "utf8");
+  index = replaceVariable("content", pageList, index);
 
   // add nav links
   index = generateNav(index, pageSet);
 
+  index = replaceVariable("title", handleSpaces(pageSet, "space"), index);
+
   // create index
-  await fs.writeFile(path.join(__dirname, "..", "build", pageSet, "index.html"), index);
+  await fs.writeFile(`./${pageSet}/index.html`, index);
   console.log(`generated page ${pageSet} / index.html`);
 }
 
@@ -73,7 +70,7 @@ async function generatePage(page, location) {
   try {
     const { date, title, images, template } = page;
 
-    let html = await fs.readFile(path.join(__dirname, "..", "templates", `${template}.html`), "utf8");
+    let html = await fs.readFile(`./templates/${template}.html`, "utf8");
 
     // page title
     html = replaceVariable("title", title, html);
@@ -118,10 +115,7 @@ async function generatePage(page, location) {
       // etc.
     }
 
-    // create file
-    await makeDirectoryIfDoesntExist(["..", "build", location]);
-    const locationPath = path.join(__dirname, `../build/${location}/${handleSpaces(title, "dash")}.html`);
-    await fs.writeFile(locationPath, html);
+    await fs.writeFile(`./${location}/${handleSpaces(title, "dash")}.html`, html);
   } catch (e) {
     console.error(e);
   }
@@ -129,4 +123,4 @@ async function generatePage(page, location) {
 
 module.exports = {
   generatePageSet
-}
+};

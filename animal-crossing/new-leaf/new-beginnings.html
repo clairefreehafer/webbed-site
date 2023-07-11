@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>claire freehafer</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      body {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 3rem;
+        min-height: 100vh;
+        margin: 0;
+        padding: 3rem;
+        background-repeat: repeat;
+        background-image: url('/images/grass/circle_0401-0722.png')
+      }
+
+      img {
+        box-sizing: border-box;
+        width: auto;
+        border: 1rem solid white;
+        box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        place-self: center;
+        max-height: calc(100vh - 6rem);
+        object-fit: contain;
+        max-width: 100%;
+      }
+
+      @media screen and (max-width: 600px) {
+        body {
+          padding: 1rem;
+        }
+
+        img {
+          border: 0.5rem solid white;
+        }
+      }
+
+      body {
+      /* create row for each image. */
+      grid-template-rows: repeat(6, auto);
+    }
+    </style>
+    <script type="module" src="./animal-crossing.js"></script>
+  </head>
+  <body>
+    <img src="https://c1.staticflickr.com/5/4513/26424696119_9272d84700_o.gif" alt="a gif of isabelle handing my character a tree sapling, which i then plant in a garden bed in the middle of the town plaza." id="image-0" /><img src="https://c1.staticflickr.com/5/4555/24348852858_e12fc9b846_o.gif" alt="a gif of my character and isabelle standing in a garden bed in the middle of the town plaza. a hole is dug in front of us." id="image-1" /><img src="https://c1.staticflickr.com/5/4565/26424695269_cde586d79d_o.gif" alt="a gif of isabelle handing my character a tree sapling as we stand in a garden bed in the middle of the town plaza. a hole is dug in front of us." id="image-2" /><img src="https://c1.staticflickr.com/5/4486/38201888811_4d85f04ab1_o.gif" alt="a gif of my character holding a tree sapling as isabelle and i stand in a garden bed in the middle of the town plaza. a hole is dug in front of us." id="image-3" /><img src="https://c1.staticflickr.com/5/4449/26424694739_9072dc17db_o.gif" alt="a gif of my character planting a tree sapling in the garden box in the town plaza." id="image-4" /><img src="https://c1.staticflickr.com/5/4469/24348851728_72c42c01ff_o.gif" alt="a gif of my character standing in front of the planted tree sapling. isabelle and our neighbors are clapping and cheering." id="image-5" />
+  </body>
+</html>

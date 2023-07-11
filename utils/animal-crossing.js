@@ -1,19 +1,15 @@
 const fs = require("fs").promises;
-const path = require("node:path");
-const { generateNav, makeDirectoryIfDoesntExist, replaceVariable, getPageConfig } = require("./build");
+const { generateNav, replaceVariable, getPageConfig, handleSpaces } = require("./build");
 
 const ANIMAL_CROSSING_GAMES = ["new-horizons", "new-leaf"];
 
 async function generateAnimalCrossingPages() {
   try {
-    await makeDirectoryIfDoesntExist(["..", "build", "animal-crossing"]);
-    let index = await fs.readFile(path.join(__dirname, "..", "animal-crossing", "index.html"), "utf8");
+    let index = await fs.readFile("./animal-crossing/index.html", "utf8");
 
     let listString = "";
 
     for (const game of ANIMAL_CROSSING_GAMES) {
-      await makeDirectoryIfDoesntExist(["..", "build", "animal-crossing", game]);
-
       const config = await getPageConfig(`animal-crossing/${game}`);
 
       listString += `<h3>${game.replace("-", " ")}</h3><ul class="list">`;
@@ -21,14 +17,14 @@ async function generateAnimalCrossingPages() {
       for (const page in config) {
         const pageConfig = config[page];
         // only one AC template atm
-        const { template, icon, date } = pageConfig;
+        const { template, icon, date, title } = pageConfig;
 
         // create the page
         if (template) {
           generateAnimalCrossingPage(pageConfig, game);
-          console.log(`generated animal-crossing / ${game} / ${pageConfig.title}`)
+          console.log(`generated animal-crossing / ${game} / ${title}`)
         } else {
-          console.log(`No template for ${pageConfig.title}`);
+          console.log(`No template for animal-crossing / ${game} / ${title}`);
         }
 
         // add icon
@@ -57,7 +53,7 @@ async function generateAnimalCrossingPages() {
     index = replaceVariable("grassColor", getGrassColor("square"), index);
 
     // create index
-    await fs.writeFile(path.join(__dirname, "..", "build", "animal-crossing", "index.html"), index);
+    await fs.writeFile("./animal-crossing/index.html", index);
     console.log("generated animal-crossing / index.html")
   } catch (error) {
     console.error(error);
@@ -67,7 +63,7 @@ async function generateAnimalCrossingPages() {
 async function generateAnimalCrossingPage(page, game) {
   try {
     const { date, title, images } = page;
-    let html = await fs.readFile(path.join(__dirname, "..", "templates", "animal-crossing.html"), "utf8");
+    let html = await fs.readFile("./templates/animal-crossing.html", "utf8");
 
     // page title
     html = replaceVariable("title", title, html);
@@ -114,9 +110,7 @@ async function generateAnimalCrossingPage(page, game) {
     html = replaceVariable("grassColor", getGrassColor(grassShape, jsDate), html);
 
     // create file
-    await makeDirectoryIfDoesntExist(["..", "build", "animal-crossing", game]);
-    const location = path.join(__dirname, `../build/animal-crossing/${game}/${title.replaceAll(" ", "-")}.html`);
-    await fs.writeFile(location, html);
+    await fs.writeFile(`./animal-crossing/${game}/${handleSpaces(title, "dash")}.html`, html);
   } catch (e) {
     console.error(e);
   }

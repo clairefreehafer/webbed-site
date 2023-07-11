@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>claire freehafer</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      body {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 3rem;
+        min-height: 100vh;
+        margin: 0;
+        padding: 3rem;
+        background-repeat: repeat;
+        background-image: url('/images/grass/triangle_0401-0722.png')
+      }
+
+      img {
+        box-sizing: border-box;
+        width: auto;
+        border: 1rem solid white;
+        box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        place-self: center;
+        max-height: calc(100vh - 6rem);
+        object-fit: contain;
+        max-width: 100%;
+      }
+
+      @media screen and (max-width: 600px) {
+        body {
+          padding: 1rem;
+        }
+
+        img {
+          border: 0.5rem solid white;
+        }
+      }
+
+      body {
+      /* create row for each image. */
+      grid-template-rows: repeat(5, auto);
+    }
+    </style>
+    <script type="module" src="./animal-crossing.js"></script>
+  </head>
+  <body>
+    <img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-w8Rr7z3/3/fc12ff3a/X2/2020-03-22-14-18-21-X2.jpg" alt="dom and my player character fish from opposite sides of a river." id="image-0" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-fKkHJh3/2/42c0cb1f/X2/2020-05-06-18-58-31-X2.jpg" alt="" id="image-1" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-sb2nnXj/2/06fe0c25/X2/2020-05-09-19-12-44-X2.jpg" alt="" id="image-2" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-CS7Mbwx/2/cb59df69/X2/2020-05-17-22-42-21-X2.jpg" alt="" id="image-3" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-NTkHvB7/2/4dc08b7e/X2/2020-05-27-23-16-33-X2.jpg" alt="a photo of dom saying "like, for isntance, i asked isabelle if we could get a training gym. she said no." with a sad look on his face." id="image-4" />
+  </body>
+</html>

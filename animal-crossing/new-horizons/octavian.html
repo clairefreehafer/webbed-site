@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>claire freehafer</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      body {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 3rem;
+        min-height: 100vh;
+        margin: 0;
+        padding: 3rem;
+        background-repeat: repeat;
+        background-image: url('/images/grass/triangle_0401-0722.png')
+      }
+
+      img {
+        box-sizing: border-box;
+        width: auto;
+        border: 1rem solid white;
+        box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        place-self: center;
+        max-height: calc(100vh - 6rem);
+        object-fit: contain;
+        max-width: 100%;
+      }
+
+      @media screen and (max-width: 600px) {
+        body {
+          padding: 1rem;
+        }
+
+        img {
+          border: 0.5rem solid white;
+        }
+      }
+
+      body {
+      /* create row for each image. */
+      grid-template-rows: repeat(6, auto);
+    }
+    </style>
+    <script type="module" src="./animal-crossing.js"></script>
+  </head>
+  <body>
+    <img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-TmXzwZw/2/30a11e3a/X2/2020-05-06-22-47-57-X2.jpg" alt="" id="image-0" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-VR4PTwn/2/89120e6f/X2/2020-05-07-20-09-38-X2.jpg" alt="" id="image-1" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-sgNXrxM/2/76d5ab26/X2/2020-05-07-20-10-15-X2.jpg" alt="" id="image-2" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-p3JPqMZ/3/612fb589/X2/2020-08-07-14-11-39-X2.jpg" alt="" id="image-3" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-QzbJgSL/3/423d2645/X2/2020-08-07-14-11-36-X2.jpg" alt="" id="image-4" /><img src="https://photos.smugmug.com/Video-Games/Animal-Crossing-New-Horizons/i-PwKZKhW/3/06751ca2/X2/2020-08-07-14-11-16-X2.jpg" alt="" id="image-5" />
+  </body>
+</html>
