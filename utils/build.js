@@ -18,11 +18,11 @@ function generateNav(html, currentPage) {
 
   for (const page of navLinks) {
     if (page === currentPage) {
-      nav += `<li class="current-page">${handleSpaces(page, "space")}</li>`;
+      nav += `<li class="current-page" id="${page}-link">${handleSpaces(page, "space")}</li>`;
     } else {
       const link = page === "home" ? "" : `${handleSpaces(page, "dash")}/`;
       const dots = currentPage === "home" ? "." : "..";
-      nav += `<li><a href="${dots}/${link}index.html">${handleSpaces(page, "space")}</a></li>`;
+      nav += `<li id="${page}-link"><a href="${dots}/${link}index.html">${handleSpaces(page, "space")}</a></li>`;
     }
   }
 

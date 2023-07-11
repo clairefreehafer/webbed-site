@@ -1,8 +1,31 @@
 body {
-  background-image: url("/images/pad-background.jpg");
-  color: white;
+  background-color: black;
+  background-image: url("./images/pad-background.jpg");
+  color: #76b6ff;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a, a:visited {
   color: white;
+}
+
+nav li {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  padding: 0 1rem 0 2rem;
+  vertical-align: middle;
+}
+
+#photography-link {
+  background-image: url("./images/icons/camera.png");
+}
+
+#animal-crossing-link {
+  background-image: url("./images/icons/korok-location.svg");
+  background-position-x: 0.25rem;
 }

@@ -8,5 +8,87 @@
       }
     ],
     "template": "photography"
+  },
+  "south akkala plains": {
+    "title": "south akkala plains",
+    "images": [
+      {
+        "key": "HPwcgrN",
+        "alt": ""
+      }
+    ],
+    "template": "photography"
+  },
+  "wetland stable": {
+    "title": "wetland stable",
+    "images": [
+      {
+        "key": "sVVh97n",
+        "alt": "link squats in front of a stable, where the horse on the roof is seen in profile against the sunrise."
+      }
+    ],
+    "template": "photography"
+  },
+  "east necluda": {
+    "title": "east necluda",
+    "images": [
+      {
+        "key": "rcchMCD",
+        "alt": "sunset above the dueling peaks."
+      },
+      {
+        "key": "QpWWhpF",
+        "alt": "link gazing out at the sunset above the dueling peaks."
+      }
+    ],
+    "template": "photography"
+  },
+  "hyrule castle": {
+    "title": "hyrule castle",
+    "images": [
+      {
+        "key": "bQxFGsr",
+        "alt": "link atop the tallest spire of hyrule castle. to his right is a korok, and to his left is vah naboris' beam."
+      }
+    ],
+    "template": "photography"
+  },
+  "goron hot springs": {
+    "title": "goron hot springs",
+    "images": [
+      {
+        "key": "mhq7xzf",
+        "alt": "link soaking in the hot spring at night with veins of lava visble behind him."
+      },
+      {
+        "key": "CjRR6gd",
+        "alt": "a top-down black and white view of one of the paths at the hot springs."
+      },
+      {
+        "key": "BfjsqH3",
+        "alt": "link in profile near a sign that appears to be pointing at him."
+      },
+      {
+        "key": "52cZ2jz",
+        "alt": "a black and white shot of link squatting underneath a mine cart rail. death mountain is visible in the background."
+      },
+      {
+        "key": "xGtKtgm",
+        "alt": "a top-down view of link standing on a rock between a hot spring pool and a mine cart rail. below him in the frame is a young goron lying on their back."
+      },
+      {
+        "key": "brZvPgf",
+        "alt": "a black and white shot of link."
+      },
+      {
+        "key": "H7XQ5hN",
+        "alt": "link standing in front of a hot spring pool."
+      },
+      {
+        "key": "DD6DjJM",
+        "alt": "a chest-up portrait of link soaking in a hot springs pool."
+      }
+    ],
+    "template": "photography"
   }
 }
