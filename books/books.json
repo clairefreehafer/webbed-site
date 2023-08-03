@@ -1,0 +1,79 @@
+{
+  "currentlyReading": [
+    {
+      "title": "fordlandia",
+      "author": "Greg Grandin",
+      "started": [
+        2023,
+        6,
+        25
+      ],
+      "finished": [],
+      "tags": [
+        "biography",
+        "history"
+      ]
+    },
+    {
+      "title": "children of dune",
+      "author": "Frank Herbert",
+      "started": [
+        2023,
+        8,
+        1
+      ],
+      "finished": [],
+      "tags": [
+        "sci-fi"
+      ]
+    }
+  ],
+  "toRead": [],
+  "read": [
+    {
+      "title": "histories of the transgender child",
+      "author": "Julian Gill-Peterson",
+      "started": [
+        2023,
+        7,
+        14
+      ],
+      "finished": [
+        2023,
+        8,
+        1
+      ],
+      "tags": [
+        "sex and gender",
+        "history",
+        "race"
+      ],
+      "openLibraryId": "OL28693427M"
+    },
+    {
+      "title": "a wizard of earthsea",
+      "author": "Ursula K. Le Guin",
+      "started": [
+        2023,
+        7,
+        14
+      ],
+      "finished": [
+        2023,
+        7,
+        27
+      ],
+      "tags": [
+        "fantasy"
+      ],
+      "openLibraryId": "OL59852W"
+    }, {
+      "title": "how far the light reaches",
+      "author": "Sabrina Imbler",
+      "started": [2023, 7, 28],
+      "finished": [2023, 7, 30],
+      "tags": ["biology and ecology", "memoir", "race", "read by the author", "sex and gender"],
+      "openLibraryId": "OL27855219W"
+    }
+  ]
+}
