@@ -8,7 +8,7 @@ const { existsSync } = require("fs");
 
 const templateVariableRegex = new RegExp("{{ ([\\w\\d]+) }}", "g");
 
-const navLinks = ["home", "photography", "animal-crossing", "zelda"];
+const navLinks = ["home", "photography", "animal-crossing", "zelda", "books"];
 
 function generateNav(html, currentPage) {
   if (!navLinks.includes(currentPage)) {

@@ -8,7 +8,7 @@
         6,
         25
       ],
-      "finished": [],
+      "finished": [2023, 8, 4],
       "tags": [
         "biography",
         "history"
@@ -74,6 +74,55 @@
       "finished": [2023, 7, 30],
       "tags": ["biology and ecology", "memoir", "race", "read by the author", "sex and gender"],
       "openLibraryId": "OL27855219W"
+    }, {
+      "title": "influencer industry",
+      "author": "Emily Hund",
+      "started": [2023, 7, 10],
+      "finished": [2023, 7, 14],
+      "tags": [],
+      "openLibraryId": ""
+    }, {
+      "title": "dune messiah",
+      "author": "Frank Herbert",
+      "started": [2023, 7, 5],
+      "finished": [2023, 7, 10],
+      "tags": ["sci-fi"],
+      "openLibraryId": ""
+    }, {
+      "title": "gender and our brains",
+      "author": "Gina Rippon",
+      "started": [2023, 6, 24],
+      "finished": [2023, 7, 8],
+      "tags": ["sex and gender"],
+      "openLibraryId": ""
+    }, {
+      "title": "city of bones",
+      "author": "Martha Wells",
+      "started": [2023, 7, 1],
+      "finished": [2023, 7, 5],
+      "tags": ["fantasy"],
+      "openLibraryId": ""
+    }, {
+      "title": "mind and the moon",
+      "author": "Daniel Bergner",
+      "started": [2023, 6, 20],
+      "finished": [2023, 7, 1],
+      "tags": ["psych"],
+      "openLibraryId": ""
+    }, {
+      "title": "dune",
+      "author": "Frank Herbert",
+      "started": [2023, 6, 6],
+      "finished": [2023, 6, 20],
+      "tags": ["sci-fi"],
+      "openLibraryId": ""
+    }, {
+      "title": "wheel of the infinite",
+      "author": "Martha Wells",
+      "started": [2023, 5, 30],
+      "finished": [2023, 6, 6],
+      "tags": ["fantasy"],
+      "openLibraryId": ""
     }
   ]
 }
